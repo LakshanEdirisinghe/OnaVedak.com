@@ -1,3 +1,18 @@
-import { navBarNormal } from "../components/navbar.js";
+import { navBarNormal, initializeMegaMenu } from "../components/navbar.js";
+
 
 document.getElementById("navbar").innerHTML = navBarNormal();
+initializeMegaMenu();
+
+
+
+
+
+
+
+
+
+
+
+
+
