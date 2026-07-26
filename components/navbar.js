@@ -2,36 +2,78 @@ const data = {
     homecleaning: `
         <div class=" text-center mb-2"><strong>Home Cleaning</strong></div>
 
-<div class="list-group list-group-flush me-2 overflow-y-auto  " style="max-height: 400px;">
-<a href="#" class="list-group-item list-group-item-action">House Cleaning</a>
+<div class="list-group list-group-flush me-2 overflow-y-auto  " style="max-height: 364px; width: 300px">
+<a href="#" class="list-group-item list-group-item-action"><strong>House Cleaning</strong></a>
 
-<a href="#" class="list-group-item list-group-item-action">Carpet Cleaning</a>
+<a href="#" class="list-group-item list-group-item-action"><strong>Carpet Cleaning</strong></a>
 
-<a href="#" class="list-group-item list-group-item-action">Junk Removal</a>
+<a href="#" class="list-group-item list-group-item-action"><strong>Junk Removal</strong></a>
 
-<a href="#" class="list-group-item list-group-item-action">Pressure Washing</a>
+<a href="#" class="list-group-item list-group-item-action"><strong>Pressure Washing</strong></a>
 
-<a href="#" class="list-group-item list-group-item-action">Upholstery and Furniture Cleaning</a>
+<a href="#" class="list-group-item list-group-item-action"><strong>Upholstery and Furniture Cleaning</strong></a>
 
-<a href="#" class="list-group-item list-group-item-action">Tile and Grout Cleaning</a>
+<a href="#" class="list-group-item list-group-item-action"><strong>Tile and Grout Cleaning</strong></a>
 
-<a href="#" class="list-group-item list-group-item-action">Commercial Cleaning</a>
+<a href="#" class="list-group-item list-group-item-action"><strong>Commercial Cleaning</strong></a>
 
-<a href="#" class="list-group-item list-group-item-action">Window Washing</a>
+<a href="#" class="list-group-item list-group-item-action"><strong>Window Washing</strong></a>
 
-<a href="#" class="list-group-item list-group-item-action">Gutter Cleaning</a>
+<a href="#" class="list-group-item list-group-item-action"><strong>Gutter Cleaning</strong></a>
 </div>
     `,
+    HomeMaintenance: `
+         <div class=" text-center mb-2"><strong>Home Maintenance</strong></div>
 
-    electrician: `
-        <h4>Electrician</h4>
+<div class="list-group list-group-flush me-2 overflow-y-auto  " style="max-height: 364px; width: 300px">
+<a href="#" class="list-group-item list-group-item-action"><strong>House Cleaning</strong></a>
 
-        <ul>
-            <li>House Wiring</li>
-            <li>Switch Repair</li>
-            <li>Generator Installation</li>
-            <li>Solar Panels</li>
-        </ul>
+<a href="#" class="list-group-item list-group-item-action">
+    <strong>Lawn Mowing and Trimming</strong>
+</a>
+
+<a href="#" class="list-group-item list-group-item-action">
+    <strong>Pool Care and Maintenance</strong>
+</a>
+
+<a href="#" class="list-group-item list-group-item-action">
+    <strong>Fireplace and Chimney Cleaning</strong>
+</a>
+
+<a href="#" class="list-group-item list-group-item-action">
+    <strong>Full Service Lawn Care</strong>
+</a>
+
+<a href="#" class="list-group-item list-group-item-action">
+    <strong>Sprinkler System Repair and Maintenance</strong>
+</a>
+
+<a href="#" class="list-group-item list-group-item-action">
+    <strong>Sump Pump Installation and Repair</strong>
+</a>
+
+<a href="#" class="list-group-item list-group-item-action">
+    <strong>Home Inspection</strong>
+</a>
+
+<a href="#" class="list-group-item list-group-item-action">
+    <strong>Property Management</strong>
+</a>
+
+<a href="#" class="list-group-item list-group-item-action">
+    <strong>Snow Plowing</strong>
+</a>
+
+<a href="#" class="list-group-item list-group-item-action">
+    <strong>Holiday Lighting Installation</strong>
+</a>
+
+<a href="#" class="list-group-item list-group-item-action">
+    <strong>Computer Repair</strong>
+</a>
+
+<a href="#" class="list-group-item list-group-item-action"><strong>Gutter Cleaning</strong></a>
+</div>
     `,
 
     cleaning: `
@@ -127,129 +169,73 @@ export function navBarNormal() {
 
                                         <div class=" text-center mb-2"><strong>CATEGORIES</strong></div>
 
-                                        <div style="color: #e2e2e2;" class="ms-2 ">Home cleaning</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="homecleaning">
-                                            House Cleaning
+                                       
+
+                                        <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="homecleaning">
+                                        House Cleaning
+                                        </a>                                 
+                                        <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="HomeMaintenance">
+                                           Home &amp; Maintenance
                                         </a>
 
-                                        <div class="ms-2 " style="color: #e2e2e2;">Home maintenance</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="routineupkeep" >
-                                            Routine Upkeep
+                                        
+                                        <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="routineupkeep" >
+                                            Home Remodeling
+
                                         </a >
 
-                                        <div class="ms-2 " style="color: #e2e2e2;">Home maintenance</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="pestsafety" >
-                                            Pest &amp; Safety
+                                        
+                                        <a href="#"  class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="pestsafety" >
+                                            Outdoor upkeep
                                         </a >
 
-                                        <div class="ms-2 " style="color: #e2e2e2;">Home maintenance</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="organizationdecor" >
-                                            Organization &amp; Décor
+                                        
+                                        <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="organizationdecor" >
+                                            Essential home services
+
                                         </a >
 
-                                        <div class="ms-2 " style="color: #e2e2e2;">Home remodeling</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="kitchenbath" >
-                                            Kitchen &amp; Bath
+                                        
+                                        <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="kitchenbath" >
+                                           Moving & transport
+
                                         </a >
 
-                                        <div class="ms-2 " style="color: #e2e2e2;">Home remodeling</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="interiorremodeling" >
-                                            Interior Remodeling
+                                        
+                                        <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="interiorremodeling" >
+                                            Events
+
                                         </a >
 
-                                        <div class="ms-2 " style="color: #e2e2e2;">Home remodeling</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="exteriorremodeling" >
-                                            Exterior Remodeling
+                                        
+                                        <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="lawnlandscape" >
+                                            Wellness & fitness
+
                                         </a >
 
-                                        <div class="ms-2 " style="color: #e2e2e2;">Outdoor upkeep</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="lawnlandscape" >
-                                            Lawn &amp; Landscape
+                                        
+                                        <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="poolexterior" >
+                                          Pets
+
                                         </a >
 
-                                        <div class="ms-2 " style="color: #e2e2e2;">Outdoor upkeep</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="poolexterior" >
-                                            Pool &amp; Exterior
+                                     
+                                        <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="plumbing" >
+                                            Business services
+
                                         </a >
 
-                                        <div class="ms-2 " style="color: #e2e2e2;">Essential home services</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="plumbing" >
-                                            Plumbing
+                                     
+                                        <a href="#"  class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="electricalhvac" >
+                                            Lessons & tutoring
+
                                         </a >
 
-                                        <div class="ms-2 " style="color: #e2e2e2;">Essential home services</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="electricalhvac" >
-                                            Electrical &amp; HVAC
+                                     
+                                        <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="handymanrepairs" >
+                                           Auto services
+
                                         </a >
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Essential home services</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="handymanrepairs" >
-                                            Handyman &amp; Repairs
-                                        </a >
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Moving &amp; transport</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="movingservices" >
-                                            Moving Services
-                                        </a >
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Events</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="photographymedia" >
-                                            Photography &amp; Media
-                                        </a >
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Events</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="planningceremony" >
-                                            Planning &amp; Ceremony
-                                        </a >
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Events</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="entertainmentcatering" >
-                                            Entertainment &amp; Catering
-                                        </a >
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Wellness &amp; fitness</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="fitness" >
-                                            Fitness
-                                        </a >
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Wellness &amp; fitness</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="healththerapies" >
-                                            Health Therapies
-                                        </a >
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Pets</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="petcare" >
-                                            Pet Care
-                                        </a >
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Business services</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="marketingdesign" >
-                                            Marketing &amp; Design
-                                        </a >
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Business services</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="adminit" >
-                                            Admin &amp; IT
-                                        </a >
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Lessons &amp; tutoring</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="academic" >
-                                            Academic
-                                        </a >
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Lessons &amp; tutoring</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="artsskills" >
-                                            Arts &amp; Skills
-                                        </a >
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Auto services</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="autoservices" >
-                                            Auto Services
-                                        </a >
-
-
-
-
                                     </div >
 
                                 </div >
