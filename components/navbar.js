@@ -1,6 +1,5 @@
 const data = {
-
-        plumbing: `
+    plumbing: `
         <h4>Plumbing</h4>
 
         <ul>
@@ -11,7 +10,7 @@ const data = {
         </ul>
     `,
 
-        electrician: `
+    electrician: `
         <h4>Electrician</h4>
 
         <ul>
@@ -22,7 +21,7 @@ const data = {
         </ul>
     `,
 
-        cleaning: `
+    cleaning: `
         <h4>Cleaning</h4>
 
         <ul>
@@ -33,7 +32,7 @@ const data = {
         </ul>
     `,
 
-        painting: `
+    painting: `
         <h4>Painting</h4>
 
         <ul>
@@ -41,36 +40,24 @@ const data = {
             <li>Furniture Painting</li>
             <li>Commercial Painting</li>
         </ul>
-    `
-    };
+    `,
+};
 
-    export function initializeMegaMenu() {
-
+export function initializeMegaMenu() {
     const contentArea = document.getElementById("contentArea");
 
-    document.querySelectorAll(".category").forEach(item => {
-
+    document.querySelectorAll(".category").forEach((item) => {
         item.addEventListener("mouseenter", () => {
-
             const service = item.dataset.service;
 
             contentArea.innerHTML = data[service];
-
         });
-
     });
 
     contentArea.innerHTML = data.plumbing;
-
 }
 
-
 export function navBarNormal() {
-
-    
-
-
-
     return `
 
     <nav class="navbar navbar-expand-lg fixed-top navBg-color">
@@ -121,114 +108,234 @@ export function navBarNormal() {
 
                                 <div class="row ">
 
-                                    <div class="col-lg-3 pe-2 p-0 ">
+                                    <div class="col-lg-4 pe-2 p-0 ">
 
                                         <div class="list-group   overflow-y-auto  " style="max-height: 400px;">
-                                        
-                                        <div class="ms-2">Home</div>
-                                            <a class="list-group-item border-0 list-group-item-action category" data-service="plumbing">
+
+                                            <!-- <div class="ms-2 " style="color: #e2e2e2;">Home cleaning</div>
+                                            <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="plumbing">
                                                 Plumbing
                                             </a>
 
-                                            <a class="list-group-item  border-0 list-group-item-action category" data-service="electrician">
+                                            <a class="list-group-item  border-0 list-group-item-action category maga-d-down-items" data-service="electrician">
                                                 Electrician
                                             </a>
-                                            <div class="ms-2">Outdoor</div>
+                                            <div class="ms-2 " style="color: #e2e2e2;">Outdoor</div>
 
-                                            <a class="list-group-item border-0 list-group-item-action category" data-service="cleaning">
+                                            <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="cleaning">
                                                 Cleaning
                                             </a>
 
-                                            <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
+                                            <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="painting">
                                                 Painting
                                             </a>
-                                            <div class="ms-2">Essential</div>
-                                                                                        <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
-                                                Painting
-                                            </a>
-
-                                            <div class="ms-2">Moving</div>
-
-                                                                                        <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
+                                            <div class="ms-2 " style="color: #e2e2e2;">Essential</div>
+                                            <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="painting">
                                                 Painting
                                             </a>
 
-                                            <div class="ms-2">Events</div>
+                                            <div class="ms-2 " style="color: #e2e2e2;" ">Moving</div>
 
-                                                                                        <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
-                                                Painting
-                                            </a>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="painting">
+                                            Painting
+                                        </a>
 
-                                            <div class="ms-2">Wellness</div>
+                                        <div class="ms-2 " style="color: #e2e2e2;">Events</div>
 
-                                                                                        <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
-                                                Painting
-                                            </a>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="painting">
+                                            Painting
+                                        </a>
 
-                                            <div class="ms-2">Pets</div>
+                                        <div class="ms-2 " style="color: #e2e2e2;">Wellness</div>
 
-                                                                                        <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
-                                                Painting
-                                            </a>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items  " data-service="painting">
+                                            Painting
+                                        </a>
 
-                                            <div class="ms-2">Business</div>
+                                        <div class="ms-2 " style="color: #e2e2e2;">Pets</div>
 
-                                                                                        <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
-                                                Painting
-                                            </a>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="painting">
+                                            Painting
+                                        </a>
 
-                                            <div class="ms-2">Other</div>
+                                        <div class="ms-2 " style="color: #e2e2e2;">Business</div>
 
-                                                                                        <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
-                                                Painting
-                                            </a>
-                                                                                        <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
-                                                Painting
-                                            </a>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="painting">
+                                            Painting
+                                        </a>
 
+                                        <div class="ms-2 " style="color: #e2e2e2;">Other</div>
 
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-lg-9 px-0  " id="contentArea">
-
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="painting">
+                                            Painting
+                                        </a>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="painting">
+                                            Painting
+                                        </a>-->
 
 
-                                    </div>
+                                        <div style="color: #e2e2e2;" class="ms-2 ">Home cleaning</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="home-cleaning">
+                                            House Cleaning
+                                        </a>
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Home maintenance</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="routine-upkeep" >
+                                            Routine Upkeep
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Home maintenance</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="pest-safety" >
+                                            Pest &amp; Safety
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Home maintenance</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="organization-decor" >
+                                            Organization &amp; Décor
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Home remodeling</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="kitchen-bath" >
+                                            Kitchen &amp; Bath
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Home remodeling</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="interior-remodeling" >
+                                            Interior Remodeling
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Home remodeling</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="exterior-remodeling" >
+                                            Exterior Remodeling
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Outdoor upkeep</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="lawn-landscape" >
+                                            Lawn &amp; Landscape
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Outdoor upkeep</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="pool-exterior" >
+                                            Pool &amp; Exterior
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Essential home services</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="plumbing" >
+                                            Plumbing
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Essential home services</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="electrical-hvac" >
+                                            Electrical &amp; HVAC
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Essential home services</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="handyman-repairs" >
+                                            Handyman &amp; Repairs
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Moving &amp; transport</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="moving-services" >
+                                            Moving Services
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Events</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="photography-media" >
+                                            Photography &amp; Media
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Events</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="planning-ceremony" >
+                                            Planning &amp; Ceremony
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Events</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="entertainment-catering" >
+                                            Entertainment &amp; Catering
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Wellness &amp; fitness</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="fitness" >
+                                            Fitness
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Wellness &amp; fitness</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="health-therapies" >
+                                            Health Therapies
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Pets</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="pet-care" >
+                                            Pet Care
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Business services</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="marketing-design" >
+                                            Marketing &amp; Design
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Business services</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="admin-it" >
+                                            Admin &amp; IT
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Lessons &amp; tutoring</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="academic" >
+                                            Academic
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Lessons &amp; tutoring</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="arts-skills" >
+                                            Arts &amp; Skills
+                                        </a >
+
+                                        <div class="ms-2 " style="color: #e2e2e2;">Auto services</div>
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="auto-services" >
+                                            Auto Services
+                                        </a >
+
+
+
+
+                                    </div >
+
+                                </div >
+
+                                <div class="col-lg-8 px-0  " id="contentArea">
 
 
 
                                 </div>
 
-                            </div>
 
-                        </div>
 
-                    </li>
+                            </div >
 
-                    </li>
+                        </div >
 
-                </ul>
+                    </div >
 
-                <!-- Right Buttons -->
-                <div class="d-flex gap-2">
+                </li >
 
-                    <button class="btn text-light btn-log">
-                        Login
-                    </button>
+            </ul >
 
-                    <button class="btn btn-primary">
-                        Sign-up
-                    </button>
+            <!-- Right Buttons -->
+            <div class="d-flex gap-2">
 
-                </div>
+                <button class="btn text-light btn-log">
+                    Login
+                </button>
+
+                <button class="btn btn-primary">
+                    Sign-up
+                </button>
 
             </div>
 
-        </div>
-    </nav>
+        </div >
+
+    </div >
+    </nav >
     
     `;
 }
-
