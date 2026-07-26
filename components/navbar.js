@@ -117,33 +117,81 @@ export function navBarNormal() {
 
                         <div class="dropdown-menu mega-dropdown-menu p-0">
 
-                            <div class="container rounded-3 overflow-hidden">
+                            <div class="container rounded-3 ">
 
                                 <div class="row ">
 
-                                    <div class="col-lg-3 pe-2 p-0 bg-danger">
+                                    <div class="col-lg-3 pe-2 p-0 ">
 
-                                        <div class="list-group rounded-0 overflow-hidden ">
-                                            <a class="list-group-item list-group-item-action category" data-service="plumbing">
+                                        <div class="list-group   overflow-y-auto  " style="max-height: 400px;">
+                                        
+                                        <div class="ms-2">Home</div>
+                                            <a class="list-group-item border-0 list-group-item-action category" data-service="plumbing">
                                                 Plumbing
                                             </a>
 
-                                            <a class="list-group-item list-group-item-action category" data-service="electrician">
+                                            <a class="list-group-item  border-0 list-group-item-action category" data-service="electrician">
                                                 Electrician
                                             </a>
+                                            <div class="ms-2">Outdoor</div>
 
-                                            <a class="list-group-item list-group-item-action category" data-service="cleaning">
+                                            <a class="list-group-item border-0 list-group-item-action category" data-service="cleaning">
                                                 Cleaning
                                             </a>
 
-                                            <a class="list-group-item list-group-item-action category" data-service="painting">
+                                            <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
                                                 Painting
                                             </a>
+                                            <div class="ms-2">Essential</div>
+                                                                                        <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
+                                                Painting
+                                            </a>
+
+                                            <div class="ms-2">Moving</div>
+
+                                                                                        <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
+                                                Painting
+                                            </a>
+
+                                            <div class="ms-2">Events</div>
+
+                                                                                        <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
+                                                Painting
+                                            </a>
+
+                                            <div class="ms-2">Wellness</div>
+
+                                                                                        <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
+                                                Painting
+                                            </a>
+
+                                            <div class="ms-2">Pets</div>
+
+                                                                                        <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
+                                                Painting
+                                            </a>
+
+                                            <div class="ms-2">Business</div>
+
+                                                                                        <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
+                                                Painting
+                                            </a>
+
+                                            <div class="ms-2">Other</div>
+
+                                                                                        <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
+                                                Painting
+                                            </a>
+                                                                                        <a class="list-group-item border-0 list-group-item-action category" data-service="painting">
+                                                Painting
+                                            </a>
+
+
                                         </div>
 
                                     </div>
 
-                                    <div class="col-lg-9 px-0 bg-success " id="contentArea">
+                                    <div class="col-lg-9 px-0  " id="contentArea">
 
 
 
