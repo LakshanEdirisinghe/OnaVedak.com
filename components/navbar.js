@@ -1,13 +1,26 @@
 const data = {
-    plumbing: `
-        <h4>Plumbing</h4>
+    homecleaning: `
+        <div class=" text-center mb-2"><strong>Home Cleaning</strong></div>
 
-        <ul>
-            <li>Leak Repair</li>
-            <li>Bathroom Installation</li>
-            <li>Kitchen Plumbing</li>
-            <li>Drain Cleaning</li>
-        </ul>
+<div class="list-group list-group-flush me-2 overflow-y-auto  " style="max-height: 400px;">
+<a href="#" class="list-group-item list-group-item-action">House Cleaning</a>
+
+<a href="#" class="list-group-item list-group-item-action">Carpet Cleaning</a>
+
+<a href="#" class="list-group-item list-group-item-action">Junk Removal</a>
+
+<a href="#" class="list-group-item list-group-item-action">Pressure Washing</a>
+
+<a href="#" class="list-group-item list-group-item-action">Upholstery and Furniture Cleaning</a>
+
+<a href="#" class="list-group-item list-group-item-action">Tile and Grout Cleaning</a>
+
+<a href="#" class="list-group-item list-group-item-action">Commercial Cleaning</a>
+
+<a href="#" class="list-group-item list-group-item-action">Window Washing</a>
+
+<a href="#" class="list-group-item list-group-item-action">Gutter Cleaning</a>
+</div>
     `,
 
     electrician: `
@@ -54,7 +67,7 @@ export function initializeMegaMenu() {
         });
     });
 
-    contentArea.innerHTML = data.plumbing;
+    contentArea.innerHTML = data.home - cleaning;
 }
 
 export function navBarNormal() {
@@ -104,118 +117,58 @@ export function navBarNormal() {
 
                         <div class="dropdown-menu mega-dropdown-menu p-0">
 
-                            <div class="container rounded-3 ">
+                            <div class="container rounded-3 shadow ">
 
                                 <div class="row ">
 
-                                    <div class="col-lg-4 pe-2 p-0 ">
+                                    <div class="col-lg-4 pe-2 p-0 mt-2 mb-2">
 
                                         <div class="list-group   overflow-y-auto  " style="max-height: 400px;">
 
-                                            <!-- <div class="ms-2 " style="color: #e2e2e2;">Home cleaning</div>
-                                            <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="plumbing">
-                                                Plumbing
-                                            </a>
-
-                                            <a class="list-group-item  border-0 list-group-item-action category maga-d-down-items" data-service="electrician">
-                                                Electrician
-                                            </a>
-                                            <div class="ms-2 " style="color: #e2e2e2;">Outdoor</div>
-
-                                            <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="cleaning">
-                                                Cleaning
-                                            </a>
-
-                                            <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="painting">
-                                                Painting
-                                            </a>
-                                            <div class="ms-2 " style="color: #e2e2e2;">Essential</div>
-                                            <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="painting">
-                                                Painting
-                                            </a>
-
-                                            <div class="ms-2 " style="color: #e2e2e2;" ">Moving</div>
-
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="painting">
-                                            Painting
-                                        </a>
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Events</div>
-
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="painting">
-                                            Painting
-                                        </a>
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Wellness</div>
-
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items  " data-service="painting">
-                                            Painting
-                                        </a>
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Pets</div>
-
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="painting">
-                                            Painting
-                                        </a>
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Business</div>
-
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="painting">
-                                            Painting
-                                        </a>
-
-                                        <div class="ms-2 " style="color: #e2e2e2;">Other</div>
-
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="painting">
-                                            Painting
-                                        </a>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="painting">
-                                            Painting
-                                        </a>-->
-
+                                        <div class=" text-center mb-2"><strong>CATEGORIES</strong></div>
 
                                         <div style="color: #e2e2e2;" class="ms-2 ">Home cleaning</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="home-cleaning">
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="homecleaning">
                                             House Cleaning
                                         </a>
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Home maintenance</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="routine-upkeep" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="routineupkeep" >
                                             Routine Upkeep
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Home maintenance</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="pest-safety" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="pestsafety" >
                                             Pest &amp; Safety
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Home maintenance</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="organization-decor" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="organizationdecor" >
                                             Organization &amp; Décor
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Home remodeling</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="kitchen-bath" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="kitchenbath" >
                                             Kitchen &amp; Bath
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Home remodeling</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="interior-remodeling" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="interiorremodeling" >
                                             Interior Remodeling
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Home remodeling</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="exterior-remodeling" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="exteriorremodeling" >
                                             Exterior Remodeling
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Outdoor upkeep</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="lawn-landscape" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="lawnlandscape" >
                                             Lawn &amp; Landscape
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Outdoor upkeep</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="pool-exterior" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="poolexterior" >
                                             Pool &amp; Exterior
                                         </a >
 
@@ -225,32 +178,32 @@ export function navBarNormal() {
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Essential home services</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="electrical-hvac" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="electricalhvac" >
                                             Electrical &amp; HVAC
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Essential home services</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="handyman-repairs" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="handymanrepairs" >
                                             Handyman &amp; Repairs
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Moving &amp; transport</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="moving-services" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="movingservices" >
                                             Moving Services
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Events</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="photography-media" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="photographymedia" >
                                             Photography &amp; Media
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Events</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="planning-ceremony" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="planningceremony" >
                                             Planning &amp; Ceremony
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Events</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="entertainment-catering" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="entertainmentcatering" >
                                             Entertainment &amp; Catering
                                         </a >
 
@@ -260,22 +213,22 @@ export function navBarNormal() {
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Wellness &amp; fitness</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="health-therapies" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="healththerapies" >
                                             Health Therapies
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Pets</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="pet-care" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="petcare" >
                                             Pet Care
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Business services</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="marketing-design" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="marketingdesign" >
                                             Marketing &amp; Design
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Business services</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="admin-it" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="adminit" >
                                             Admin &amp; IT
                                         </a >
 
@@ -285,12 +238,12 @@ export function navBarNormal() {
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Lessons &amp; tutoring</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="arts-skills" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="artsskills" >
                                             Arts &amp; Skills
                                         </a >
 
                                         <div class="ms-2 " style="color: #e2e2e2;">Auto services</div>
-                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="auto-services" >
+                                        <a class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="autoservices" >
                                             Auto Services
                                         </a >
 
@@ -301,7 +254,7 @@ export function navBarNormal() {
 
                                 </div >
 
-                                <div class="col-lg-8 px-0  " id="contentArea">
+                                <div class="col-lg-8 px-0 mt-2  " id="contentArea">
 
 
 
