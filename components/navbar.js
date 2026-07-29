@@ -900,9 +900,9 @@ export function navBarNormal() {
                 Login
                 </button>
 
-                    <a href="./pages/login&signUp/signUp/singUp-main.html" class="btn btn-primary">
-                    Sign Up
-                    </a>
+                    <a href="pages/signup/singUp-main.html" class="btn btn-primary">
+    Sign Up
+</a>
 
                 </div>
 
