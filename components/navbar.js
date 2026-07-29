@@ -894,15 +894,15 @@ export function navBarNormal() {
                 </ul >
 
                 <!-- Right Buttons -->
-                <div class="d-flex gap-2">
+               <div class="d-flex gap-2">
 
-                    <button class="btn text-light btn-log">
-                        Login
-                    </button>
+                <button class="btn text-light btn-log">
+                Login
+                </button>
 
-                    <button class="btn btn-primary">
-                        Sign-up
-                    </button>
+                    <a href="pages/login&signUp/signUp/singUp-main.html" class="btn btn-primary">
+                     Sign-up
+                        </a>
 
                 </div>
 
