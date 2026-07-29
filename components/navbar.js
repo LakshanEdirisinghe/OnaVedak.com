@@ -1,108 +1,5 @@
-// const data = {
-//     homecleaning: `
-//         <div class=" text-center mb-2"><strong>Home Cleaning</strong></div>
-
-// <div class="list-group list-group-flush ms-3 me-3" >
-// <a href="#" class="list-group-item list-group-item-action"><strong>House Cleaning</strong></a>
-
-// <a href="#" class="list-group-item list-group-item-action"><strong>Carpet Cleaning</strong></a>
-
-// <a href="#" class="list-group-item list-group-item-action"><strong>Junk Removal</strong></a>
-
-// <a href="#" class="list-group-item list-group-item-action"><strong>Pressure Washing</strong></a>
-
-// <a href="#" class="list-group-item list-group-item-action"><strong>Upholstery and Furniture Cleaning</strong></a>
-
-// <a href="#" class="list-group-item list-group-item-action"><strong>Tile and Grout Cleaning</strong></a>
-
-// <a href="#" class="list-group-item list-group-item-action"><strong>Commercial Cleaning</strong></a>
-
-// <a href="#" class="list-group-item list-group-item-action"><strong>Window Washing</strong></a>
-
-// <a href="#" class="list-group-item list-group-item-action"><strong>Gutter Cleaning</strong></a>
-// </div>
-//     `,
-//     homemaintenance: `
-//     <div class=" text-center mb-2" > <strong>Home Maintenance</strong></div>
-
-//         <div class="list-group list-group-flush ms-3 me-3" >
-
-//         <div style="color: #a1a1a1;" class="ms-3 bg-body-secondary text-center">Routine Upkeep</div>
-
-//             <a href="#" class="list-group-item list-group-item-action">
-//                 <strong>Lawn Mowing and Trimming</strong>
-//             </a>
-
-//             <a href="#" class="list-group-item list-group-item-action">
-//                 <strong>Pool Care and Maintenance</strong>
-//             </a>
- 
-//             <a href="#" class="list-group-item list-group-item-action">
-//                 <strong>Fireplace and Chimney Cleaning</strong>
-//             </a>
-
-//             <a href="#" class="list-group-item list-group-item-action">
-//                 <strong>Full Service Lawn Care</strong>
-//             </a>
-
-//             <a href="#" class="list-group-item list-group-item-action">
-//                 <strong>Sprinkler System Repair and Maintenance</strong>
-//             </a>
-
-//             <a href="#" class="list-group-item list-group-item-action">
-//                 <strong>Sump Pump Installation and Repair</strong>
-//             </a>
-
-//             <a href="#" class="list-group-item list-group-item-action">
-//                 <strong>Home Inspection</strong>
-//             </a>
-
-//             <a href="#" class="list-group-item list-group-item-action">
-//                 <strong>Property Management</strong>
-//             </a>
-
-//             <a href="#" class="list-group-item list-group-item-action">
-//                 <strong>Snow Plowing</strong>
-//             </a>
-
-//             <a href="#" class="list-group-item list-group-item-action">
-//                 <strong>Holiday Lighting Installation</strong>
-//             </a>
-
-//             <a href="#" class="list-group-item list-group-item-action border-0">
-//                 <strong>Computer Repair</strong>
-//             </a>
-
-//             <div style="color: #a1a1a1;" class="ms-3 bg-body-secondary text-center">Safety</div>
-
-
-
-// <a href="#" class="list-group-item list-group-item-action">
-//     <strong>Bed Bug Extermination</strong>
-// </a>
-
-// <a href="#" class="list-group-item list-group-item-action">
-//     <strong>Mold Inspection and Removal</strong>
-// </a>
-
-// <a href="#" class="list-group-item list-group-item-action">
-//     <strong>Rodent Removal</strong>
-// </a>
-
-// <a href="#" class="list-group-item list-group-item-action">
-//     <strong>Home Security and Alarms Installation</strong>
-// </a>
-
-// <a href="#" class="list-group-item list-group-item-action border-0">
-//     <strong>Water Damage Cleanup and Restoration</strong>
-// </a>
-
-//         </div>
-// `
-// };
-
 const data = {
-    homecleaning: `
+  homecleaning: `
         <div class=" text-center mb-2"><strong>Home Cleaning</strong></div>
 
 <div class="list-group list-group-flush ms-3 me-3" >
@@ -126,7 +23,7 @@ const data = {
 </div>
     `,
 
-    homemaintenance: `
+  homemaintenance: `
     <div class=" text-center mb-2" > <strong>Home Maintenance</strong></div>
 
         <div class="list-group list-group-flush ms-3 me-3" >
@@ -228,7 +125,7 @@ const data = {
         </div>
 `,
 
-    homeremodeling: `
+  homeremodeling: `
     <div class=" text-center mb-2" > <strong>Home Remodeling</strong></div>
 
         <div class="list-group list-group-flush ms-3 me-3" >
@@ -358,7 +255,7 @@ const data = {
         </div>
 `,
 
-    outdoorupkeep: `
+  outdoorupkeep: `
     <div class=" text-center mb-2" > <strong>Outdoor Upkeep</strong></div>
 
         <div class="list-group list-group-flush ms-3 me-3" >
@@ -414,7 +311,7 @@ const data = {
         </div>
 `,
 
-    essentialhomeservices: `
+  essentialhomeservices: `
     <div class=" text-center mb-2" > <strong>Essential Home Services</strong></div>
 
         <div class="list-group list-group-flush ms-3 me-3" >
@@ -472,7 +369,7 @@ const data = {
         </div>
 `,
 
-    movingtransport: `
+  movingtransport: `
         <div class=" text-center mb-2"><strong>Moving &amp; Transport</strong></div>
 
 <div class="list-group list-group-flush ms-3 me-3" >
@@ -486,7 +383,7 @@ const data = {
 </div>
     `,
 
-    events: `
+  events: `
     <div class=" text-center mb-2" > <strong>Events</strong></div>
 
         <div class="list-group list-group-flush ms-3 me-3" >
@@ -548,7 +445,7 @@ const data = {
         </div>
 `,
 
-    wellnessfitness: `
+  wellnessfitness: `
     <div class=" text-center mb-2" > <strong>Wellness &amp; Fitness</strong></div>
 
         <div class="list-group list-group-flush ms-3 me-3" >
@@ -584,7 +481,7 @@ const data = {
         </div>
 `,
 
-    pets: `
+  pets: `
         <div class=" text-center mb-2"><strong>Pets</strong></div>
 
 <div class="list-group list-group-flush ms-3 me-3" >
@@ -598,7 +495,7 @@ const data = {
 </div>
     `,
 
-    businessservices: `
+  businessservices: `
     <div class=" text-center mb-2" > <strong>Business Services</strong></div>
 
         <div class="list-group list-group-flush ms-3 me-3" >
@@ -646,7 +543,7 @@ const data = {
         </div>
 `,
 
-    lessonstutoring: `
+  lessonstutoring: `
     <div class=" text-center mb-2" > <strong>Lessons &amp; Tutoring</strong></div>
 
         <div class="list-group list-group-flush ms-3 me-3" >
@@ -684,27 +581,27 @@ const data = {
             </a>
 
         </div>
-`
+`,
 };
 
 export function initializeMegaMenu() {
-    let contentArea = document.getElementById("contentArea");
+  let contentArea = document.getElementById("contentArea");
 
-    document.querySelectorAll(".category").forEach((item) => {
-        item.addEventListener("mouseenter", () => {
-            const service = item.dataset.service;
+  document.querySelectorAll(".category").forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      const service = item.dataset.service;
 
-            contentArea.innerHTML = data[service];
-        });
+      contentArea.innerHTML = data[service];
     });
+  });
 
-    contentArea.innerHTML = data.homecleaning;
+  contentArea.innerHTML = data.homecleaning;
 }
 
 export function navBarNormal() {
-    return `
+  return `
 
-    <nav class="navbar navbar-expand-lg  navBg-color" >
+        <nav class="navbar navbar-expand-lg  navBg-color">
         <div class="container-fluid">
 
             <!-- Brand -->
@@ -752,7 +649,8 @@ export function navBarNormal() {
 
                                 <div class="row ">
 
-                                    <div class="col-lg-4 pe-2 p-0 mt-2 mb-2 overflow-y-auto  " style="max-height: 400px;">
+                                    <div class="col-lg-4 pe-2 p-0 mt-2 mb-2 overflow-y-auto  "
+                                        style="max-height: 400px;">
 
                                         <div class="list-group ">
 
@@ -827,55 +725,78 @@ export function navBarNormal() {
                                             </a >-->
 
 
-                                            <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="homecleaning">
-        Home Cleaning
-    </a>
+                                            <a href="#"
+                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                data-service="homecleaning">
+                                                Home Cleaning
+                                            </a>
 
-    <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="homemaintenance">
-        Home &amp; Maintenance
-    </a>
+                                            <a href="#"
+                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                data-service="homemaintenance">
+                                                Home &amp; Maintenance
+                                            </a>
 
-    <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="homeremodeling">
-        Home Remodeling
-    </a>
+                                            <a href="#"
+                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                data-service="homeremodeling">
+                                                Home Remodeling
+                                            </a>
 
-    <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="outdoorupkeep">
-        Outdoor Upkeep
-    </a>
+                                            <a href="#"
+                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                data-service="outdoorupkeep">
+                                                Outdoor Upkeep
+                                            </a>
 
-    <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="essentialhomeservices">
-        Essential Home Services
-    </a>
+                                            <a href="#"
+                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                data-service="essentialhomeservices">
+                                                Essential Home Services
+                                            </a>
 
-    <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="movingtransport">
-        Moving &amp; Transport
-    </a>
+                                            <a href="#"
+                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                data-service="movingtransport">
+                                                Moving &amp; Transport
+                                            </a>
 
-    <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="events">
-        Events
-    </a>
+                                            <a href="#"
+                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                data-service="events">
+                                                Events
+                                            </a>
 
-    <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="wellnessfitness">
-        Wellness &amp; Fitness
-    </a>
+                                            <a href="#"
+                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                data-service="wellnessfitness">
+                                                Wellness &amp; Fitness
+                                            </a>
 
-    <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="pets">
-        Pets
-    </a>
+                                            <a href="#"
+                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                data-service="pets">
+                                                Pets
+                                            </a>
 
-    <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="businessservices">
-        Business Services
-    </a>
+                                            <a href="#"
+                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                data-service="businessservices">
+                                                Business Services
+                                            </a>
 
-    <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="lessonstutoring">
-        Lessons &amp; Tutoring
-    </a>
+                                            <a href="#"
+                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                data-service="lessonstutoring">
+                                                Lessons &amp; Tutoring
+                                            </a>
 
-                                        </div >
+                                        </div>
 
-                                    </div >
+                                    </div>
 
-                                    <div class="col-lg-8 px-0 mt-2  overflow-y-auto  " style="max-height: 400px;" id="contentArea">
+                                    <div class="col-lg-8 px-0 mt-2  overflow-y-auto  " style="max-height: 400px;"
+                                        id="contentArea">
 
 
 
@@ -883,15 +804,15 @@ export function navBarNormal() {
 
 
 
-                                </div >
+                                </div>
 
-                            </div >
+                            </div>
 
-                        </div >
+                        </div>
 
-                    </li >
+                    </li>
 
-                </ul >
+                </ul>
 
                 <!-- Right Buttons -->
                 <div class="d-flex gap-2">
@@ -900,16 +821,17 @@ export function navBarNormal() {
                         Login
                     </button>
 
-                    <button class="btn btn-primary">
-                        Sign-up
-                    </button>
+
+                    <a href="pages/login&sinUp/singUp/singUp-main.html" class="btn btn-primary">
+                        Sign Up
+                    </a>
 
                 </div>
 
-            </div >
+            </div>
 
-        </div >
-    </ nav>
+        </div>
+    </nav>
 
     `;
 }

@@ -22,17 +22,17 @@
 }
 
 .d-down-navbar {
-    border: 1px solid #1F2937
+    border: 1px solid #1F2937 !important;
 }
 
 .d-down-navbar:active {
-    background-color: var(--bs-primary);
+    background-color: var(--bs-primary) ;
     border-radius: 8px;
 
 }
 
 .d-down-navbar:hover {
-    border: 1px solid var(--bs-body-bg);
+    border: 1px solid var(--bs-body-bg) !important;
     border-radius: 8px;
 
 }
@@ -54,7 +54,7 @@
 
 .hero {
     height: 75vh;
-    background-image: url(../assets/annie-spratt-r9eIL7jtenc-unsplash.jpg);
+    background-image: url(../Assets/annie-spratt-r9eIL7jtenc-unsplash.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
