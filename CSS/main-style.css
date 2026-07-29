@@ -1,8 +1,62 @@
-*{
+* {
     font-family: "Google Sans", sans-serif;
 }
 
-.navBg-color{
+.navBg-color {
     background-color: #1F2937;
 }
 
+.btn-log {
+    color: var(--bs-primary);
+    border: 1px solid var(--bs-body-bg);
+}
+
+.btn-log:hover {
+    background-color: var(--bs-primary) !important;
+    color: white !important;
+}
+
+.d-down-navbar::after {
+    display: none;
+
+}
+
+.d-down-navbar {
+    border: 1px solid #1F2937 !important;
+}
+
+.d-down-navbar:active {
+    background-color: var(--bs-primary) ;
+    border-radius: 8px;
+
+}
+
+.d-down-navbar:hover {
+    border: 1px solid var(--bs-body-bg) !important;
+    border-radius: 8px;
+
+}
+
+.mega-dropdown-menu {
+    width: 600px;
+    min-width: 600px;
+
+    left: 50% !important;
+
+    transform: translateX(-50%);
+}
+
+.maga-d-down-items:hover {
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+
+.hero {
+    height: 75vh;
+    background-image: url(../assets/annie-spratt-r9eIL7jtenc-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
