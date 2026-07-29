@@ -601,64 +601,71 @@ export function initializeMegaMenu() {
 export function navBarNormal() {
   return `
 
-        <nav class="navbar navbar-expand-lg  navBg-color">
-        <div class="container-fluid">
+ <nav class="navbar navbar-expand-lg  navBg-color">
+            <div class="container-fluid">
 
-            <!-- Brand -->
-            <a class="navbar-brand text-light" href="#">
-                <strong>Ona</strong>Vedak.com
-            </a>
+                <!-- Brand -->
+                <a class="navbar-brand text-light" href="#">
+                    <strong>Ona</strong>Vedak.com
+                </a>
 
-            <!-- Toggle Button -->
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
+                <!-- Toggle Button -->
+                <button class="navbar-toggler border-0 shadow-none"
+                    type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                    class="bi bi-list text-light" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30"
+                        height="30" fill="currentColor"
+                        class="bi bi-list text-light" viewBox="0 0 16 16">
 
-                    <path fill-rule="evenodd"
-                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-                </svg>
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                    </svg>
 
-            </button>
+                </button>
 
-            <!-- Collapsible Content -->
-            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Collapsible Content -->
+                <div class="collapse navbar-collapse" id="navbarNav">
 
-                <!-- Center Menu -->
-                <ul class="navbar-nav mx-auto">
+                    <!-- Center Menu -->
+                    <ul class="navbar-nav mx-auto">
 
-                    <li class="nav-item dropdown ">
+                        <li class="nav-item dropdown ">
 
-                        <a class="nav-link d-down-navbar text-light dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            <a
+                                class="nav-link d-down-navbar text-light dropdown-toggle"
+                                href="#" data-bs-toggle="dropdown">
 
-                            Explore Services
+                                Explore Services
 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                class="bi bi-menu-up ms-2" viewBox="0 0 16 16">
-                                <path
-                                    d="M7.646 15.854a.5.5 0 0 0 .708 0L10.207 14H14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3.793zM1 9V6h14v3zm14 1v2a1 1 0 0 1-1 1h-3.793a1 1 0 0 0-.707.293l-1.5 1.5-1.5-1.5A1 1 0 0 0 5.793 13H2a1 1 0 0 1-1-1v-2zm0-5H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zM2 11.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 0-1h-8a.5.5 0 0 0-.5.5m0-4a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11a.5.5 0 0 0-.5.5m0-4a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 0-1h-6a.5.5 0 0 0-.5.5" />
-                            </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="18" height="18" fill="currentColor"
+                                    class="bi bi-menu-up ms-2"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M7.646 15.854a.5.5 0 0 0 .708 0L10.207 14H14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3.793zM1 9V6h14v3zm14 1v2a1 1 0 0 1-1 1h-3.793a1 1 0 0 0-.707.293l-1.5 1.5-1.5-1.5A1 1 0 0 0 5.793 13H2a1 1 0 0 1-1-1v-2zm0-5H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zM2 11.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 0-1h-8a.5.5 0 0 0-.5.5m0-4a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11a.5.5 0 0 0-.5.5m0-4a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 0-1h-6a.5.5 0 0 0-.5.5" />
+                                </svg>
 
-                        </a>
+                            </a>
 
-                        <div class="dropdown-menu mega-dropdown-menu p-0">
+                            <div class="dropdown-menu mega-dropdown-menu p-0">
 
-                            <div class="container rounded-3 shadow ">
+                                <div class="container rounded-3 shadow ">
 
-                                <div class="row ">
+                                    <div class="row ">
 
-                                    <div class="col-lg-4 pe-2 p-0 mt-2 mb-2 overflow-y-auto  "
-                                        style="max-height: 400px;">
+                                        <div
+                                            class="col-lg-4 pe-2 p-0 mt-2 mb-2 overflow-y-auto  "
+                                            style="max-height: 400px;">
 
-                                        <div class="list-group ">
+                                            <div class="list-group ">
 
-                                            <div class=" text-center mb-2"><strong>CATEGORIES</strong></div>
+                                                <div
+                                                    class=" text-center mb-2"><strong>CATEGORIES</strong></div>
 
-
-
-                                            <!-- <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="homecleaning">
+                                                <!-- <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="homecleaning">
                                                 House Cleaning
                                             </a>
                                             <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="homemaintenance">
@@ -669,6 +676,7 @@ export function navBarNormal() {
                                             <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="routineupkeep" >
                                                 Home Remodeling
 
+<<<<<<< HEAD
                                             </a >
 
 
@@ -724,114 +732,111 @@ export function navBarNormal() {
 
                                             </a >-->
 
+                                                <a href="#"
+                                                    class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                    data-service="homecleaning">
+                                                    Home Cleaning
+                                                </a>
 
-                                            <a href="#"
-                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
-                                                data-service="homecleaning">
-                                                Home Cleaning
-                                            </a>
+                                                <a href="#"
+                                                    class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                    data-service="homemaintenance">
+                                                    Home &amp; Maintenance
+                                                </a>
 
-                                            <a href="#"
-                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
-                                                data-service="homemaintenance">
-                                                Home &amp; Maintenance
-                                            </a>
+                                                <a href="#"
+                                                    class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                    data-service="homeremodeling">
+                                                    Home Remodeling
+                                                </a>
 
-                                            <a href="#"
-                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
-                                                data-service="homeremodeling">
-                                                Home Remodeling
-                                            </a>
+                                                <a href="#"
+                                                    class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                    data-service="outdoorupkeep">
+                                                    Outdoor Upkeep
+                                                </a>
 
-                                            <a href="#"
-                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
-                                                data-service="outdoorupkeep">
-                                                Outdoor Upkeep
-                                            </a>
+                                                <a href="#"
+                                                    class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                    data-service="essentialhomeservices">
+                                                    Essential Home Services
+                                                </a>
 
-                                            <a href="#"
-                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
-                                                data-service="essentialhomeservices">
-                                                Essential Home Services
-                                            </a>
+                                                <a href="#"
+                                                    class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                    data-service="movingtransport">
+                                                    Moving &amp; Transport
+                                                </a>
 
-                                            <a href="#"
-                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
-                                                data-service="movingtransport">
-                                                Moving &amp; Transport
-                                            </a>
+                                                <a href="#"
+                                                    class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                    data-service="events">
+                                                    Events
+                                                </a>
 
-                                            <a href="#"
-                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
-                                                data-service="events">
-                                                Events
-                                            </a>
+                                                <a href="#"
+                                                    class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                    data-service="wellnessfitness">
+                                                    Wellness &amp; Fitness
+                                                </a>
 
-                                            <a href="#"
-                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
-                                                data-service="wellnessfitness">
-                                                Wellness &amp; Fitness
-                                            </a>
+                                                <a href="#"
+                                                    class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                    data-service="pets">
+                                                    Pets
+                                                </a>
 
-                                            <a href="#"
-                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
-                                                data-service="pets">
-                                                Pets
-                                            </a>
+                                                <a href="#"
+                                                    class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                    data-service="businessservices">
+                                                    Business Services
+                                                </a>
 
-                                            <a href="#"
-                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
-                                                data-service="businessservices">
-                                                Business Services
-                                            </a>
+                                                <a href="#"
+                                                    class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                    data-service="lessonstutoring">
+                                                    Lessons &amp; Tutoring
+                                                </a>
 
-                                            <a href="#"
-                                                class="list-group-item border-0 list-group-item-action category maga-d-down-items"
-                                                data-service="lessonstutoring">
-                                                Lessons &amp; Tutoring
-                                            </a>
+                                            </div>
+
+                                        </div>
+
+                                        <div
+                                            class="col-lg-8 px-0 mt-2  overflow-y-auto  "
+                                            style="max-height: 400px;"
+                                            id="contentArea">
 
                                         </div>
 
                                     </div>
 
-                                    <div class="col-lg-8 px-0 mt-2  overflow-y-auto  " style="max-height: 400px;"
-                                        id="contentArea">
-
-
-
-                                    </div>
-
-
-
                                 </div>
 
                             </div>
 
-                        </div>
+                        </li>
 
-                    </li>
+                    </ul>
 
-                </ul>
+                    <!-- Right Buttons -->
+                    <div class="d-flex gap-2">
 
-                <!-- Right Buttons -->
-                <div class="d-flex gap-2">
+                        <button class="btn text-light btn-log">
+                            Login
+                        </button>
 
-                    <button class="btn text-light btn-log">
-                        Login
-                    </button>
+                        <a href="./pages/login-sinUp/singUp/singUp-main.html"
+                            class="btn btn-primary">
+                            Sign Up
+                        </a>
 
-
-                    <a href="pages/login&sinUp/singUp/singUp-main.html" class="btn btn-primary">
-                        Sign Up
-                    </a>
+                    </div>
 
                 </div>
 
             </div>
-
-        </div>
-    </nav>
+        </nav>
 
     `;
 }
