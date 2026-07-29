@@ -7,12 +7,12 @@ var slider = document.getElementById("slider");
 var frame = document.getElementById("formFrame");
 
 var slideimages = [
-    "../../../assets/s1.jpg",
-    "../../../assets/s2.jpg",
-    "../../../assets/s3.jpg",
-    "../../../assets/s4.jpg",
-    "../../../assets/s5.jpg",
-    "../../../assets/s6.jpg"
+    "../../../assets/s1.jpeg",
+    "../../../assets/s2.jpeg",
+    "../../../assets/s3.jpeg",
+    "../../../assets/s4.jpeg",
+    "../../../assets/s5.jpeg",
+    "../../../assets/s6.jpeg"
 ];
 
 let i = 0;
