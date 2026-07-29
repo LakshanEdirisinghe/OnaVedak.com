@@ -704,7 +704,7 @@ export function initializeMegaMenu() {
 export function navBarNormal() {
     return `
 
-    <nav class="navbar navbar-expand-lg fixed-top navBg-color" >
+    <nav class="navbar navbar-expand-lg  navBg-color" >
         <div class="container-fluid">
 
             <!-- Brand -->
