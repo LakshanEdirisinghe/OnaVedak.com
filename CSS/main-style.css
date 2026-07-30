@@ -2,17 +2,16 @@
     font-family: "Google Sans", sans-serif;
 }
 
-.navBg-color {
+/* .navBg-color {
     background-color: #1F2937;
-}
+} */
 
-.btn-log {
+/* .btn-log {
     color: var(--bs-primary);
     border: 1px solid var(--bs-body-bg);
-}
+} */
 
 .btn-log:hover {
-    background-color: var(--bs-primary) !important;
     color: white !important;
 }
 
@@ -22,7 +21,7 @@
 }
 
 .d-down-navbar {
-    border: 1px solid #1F2937 !important;
+    border: 1px solid #ffffff !important;
 }
 
 .d-down-navbar:active {

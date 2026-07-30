@@ -601,13 +601,13 @@ export function initializeMegaMenu() {
 export function navBarNormal() {
   return `
 
- <nav class="navbar navbar-expand-lg  navBg-color">
+  <nav class="navbar navbar-expand-lg  navBg-color bg-bg-light">
             <div class="container-fluid">
 
                 <!-- Brand -->
-                <a class="navbar-brand text-light" href="#">
-                    <strong>Ona</strong>Vedak.com
-                </a>
+                <a class="navbar-brand fw-bold fs-3 ms-4" href="#">Ona<span
+                        style="color: #2f5bff;"
+                        class="text-brand ">Vedak</span>.com</a>
 
                 <!-- Toggle Button -->
                 <button class="navbar-toggler border-0 shadow-none"
@@ -635,7 +635,7 @@ export function navBarNormal() {
                         <li class="nav-item dropdown ">
 
                             <a
-                                class="nav-link d-down-navbar text-light dropdown-toggle"
+                                class="nav-link text-black fw-bold fs-4 d-down-navbar dropdown-toggle"
                                 href="#" data-bs-toggle="dropdown">
 
                                 Explore Services
@@ -664,73 +664,6 @@ export function navBarNormal() {
 
                                                 <div
                                                     class=" text-center mb-2"><strong>CATEGORIES</strong></div>
-
-                                                <!-- <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="homecleaning">
-                                                House Cleaning
-                                            </a>
-                                            <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="homemaintenance">
-                                                Home &amp; Maintenance
-                                            </a>
-
-
-                                            <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="routineupkeep" >
-                                                Home Remodeling
-
-<<<<<<< HEAD
-                                            </a >
-
-
-                                            <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="pestsafety" >
-                                                Outdoor upkeep
-                                            </a >
-
-
-                                            <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="organizationdecor" >
-                                                Essential home services
-
-                                            </a >
-
-
-                                            <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="kitchenbath" >
-                                                Moving & transport
-
-                                            </a >
-
-
-                                            <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="interiorremodeling" >
-                                                Events
-
-                                            </a >
-
-
-                                            <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="lawnlandscape" >
-                                                Wellness & fitness
-
-                                            </a >
-
-
-                                            <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="poolexterior" >
-                                                Pets
-
-                                            </a >
-
-
-                                            <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="plumbing" >
-                                                Business services
-
-                                            </a >
-
-
-                                            <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="electricalhvac" >
-                                                Lessons & tutoring
-
-                                            </a >
-
-
-                                            <a href="#" class="list-group-item border-0 list-group-item-action category maga-d-down-items" data-service="handymanrepairs" >
-                                                Auto services
-
-                                            </a >-->
 
                                                 <a href="#"
                                                     class="list-group-item border-0 list-group-item-action category maga-d-down-items"
@@ -820,14 +753,17 @@ export function navBarNormal() {
                     </ul>
 
                     <!-- Right Buttons -->
-                    <div class="d-flex gap-2">
+                    <div class="d-flex  gap-2 me-lg-4 me-md-3">
 
-                        <button class="btn text-light btn-log">
+                        <!-- <button class="btn text-light btn-log">
                             Login
-                        </button>
+                        </button> -->
+
+                        <button type="button" class="btn btn-log text-black rounded-4 btn-outline-primary">Login</button>
+                        
 
                         <a href="./pages/login-sinUp/singUp/singUp-main.html"
-                            class="btn btn-primary">
+                            class="btn rounded-4 btn-primary">
                             Sign Up
                         </a>
 
