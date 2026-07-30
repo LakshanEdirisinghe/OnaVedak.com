@@ -25,11 +25,12 @@
 }
 
 .d-down-navbar:active {
-    background-color: var(--bs-primary) ;
+    background-color: var(--bs-primary);
     border-radius: 8px;
     color: white !important;
 
 }
+
 
 .d-down-navbar:hover {
     border: 1px solid #2071F8 !important;
@@ -54,9 +55,18 @@
 
 .hero {
     height: 75vh;
-    background-image: url(../Assets/annie-spratt-r9eIL7jtenc-unsplash.jpg);
-    background-repeat: no-repeat;
+    background-color: #0c1526;
+    /* background-image: url(../Assets/annie-spratt-r9eIL7jtenc-unsplash.jpg); */
+    /* background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
+
+}
+
+.hero-collage img {
+    aspect-ratio: 3/5;
+    object-fit: cover;
+    width: 100%;
+    height: 120%; 
 
 }
