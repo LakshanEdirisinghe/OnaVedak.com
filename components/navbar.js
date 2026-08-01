@@ -758,7 +758,9 @@ export function navBarNormal() {
                         <a href="pages/auth/login_Version1.html"
                             class="btn btn-outline-primary text-black rounded-4"
                             role="button">Login</a>
-                        <a href="/pages/auth/signup_Version2.html" class="btn btn-primary rounded-4"
+                       
+
+                            <a href="/pages/login-sinUp/singUp/singUp-main.html" class="btn btn-primary rounded-4"
                             role="button">Sign Up</a>
 
                     </div>
