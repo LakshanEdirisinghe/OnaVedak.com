@@ -120,7 +120,6 @@
         saveUser(demoUser);
         console.log('[seedDemoUser] Demo user created:', demoEmail);
       } else {
-        // fallback if saveUser isn't available yet
         const KEY = 'ov_users';
         const users = JSON.parse(localStorage.getItem(KEY) || '[]');
         users.push(demoUser);
@@ -134,3 +133,28 @@
     console.warn('[seedDemoUser] failed to seed demo user:', err);
   }
 })();
+
+// Call from pages to securely update password (demo-local only)
+window.resetPasswordByEmailAndContact = function (email, contact, newPassword) {
+  if (!email || !contact || !newPassword) {
+    return { success: false, message: 'Email, contact and new password are required.' };
+  }
+  if (typeof newPassword !== 'string' || newPassword.length < 8) {
+    return { success: false, message: 'New password must be at least 8 characters.' };
+  }
+
+  const user = findUserByEmail(email);
+  if (!user) {
+    return { success: false, message: 'No account found with that email.' };
+  }
+  if ((user.contact || '').trim() !== contact.trim()) {
+    return { success: false, message: 'Contact number does not match our records.' };
+  }
+
+  user.password = newPassword; // DEMO: plaintext
+  const ok = updateUser(user);
+  if (!ok) {
+    return { success: false, message: 'Failed to update password. Please try again.' };
+  }
+  return { success: true, message: 'Password updated successfully.' };
+};
