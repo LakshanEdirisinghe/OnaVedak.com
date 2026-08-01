@@ -601,11 +601,11 @@ export function initializeMegaMenu() {
 export function navBarNormal() {
   return `
 
-  <nav class="navbar navbar-expand-lg  navBg-color bg-bg-light">
+<nav class="navbar navbar-expand-lg  navBg-color bg-bg-light">
             <div class="container-fluid">
 
                 <!-- Brand -->
-                <a class="navbar-brand fw-bold fs-3 ms-4" href="#">Ona<span
+                <a class="navbar-brand fw-bold fs-3 ms-4" href="/index.html">Ona<span
                         style="color: #2f5bff;"
                         class="text-brand ">Vedak</span>.com</a>
 
@@ -755,8 +755,11 @@ export function navBarNormal() {
                     <!-- Right Buttons -->
                     <div class="d-flex  gap-2 me-lg-4 me-md-3">
 
-<a href="login.html" class="btn btn-outline-primary text-black rounded-4" role="button">Login</a>
-  <a href="signup.html" class="btn btn-primary rounded-4" role="button">Sign Up</a>
+                        <a href="pages/auth/login_Version1.html"
+                            class="btn btn-outline-primary text-black rounded-4"
+                            role="button">Login</a>
+                        <a href="/pages/auth/signup_Version2.html" class="btn btn-primary rounded-4"
+                            role="button">Sign Up</a>
 
                     </div>
 
