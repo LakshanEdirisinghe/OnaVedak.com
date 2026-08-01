@@ -755,17 +755,8 @@ export function navBarNormal() {
                     <!-- Right Buttons -->
                     <div class="d-flex  gap-2 me-lg-4 me-md-3">
 
-                        <!-- <button class="btn text-light btn-log">
-                            Login
-                        </button> -->
-
-                        <button type="button" class="btn btn-log text-black rounded-4 btn-outline-primary">Login</button>
-                        
-
-                        <a href="./pages/login-sinUp/singUp/singUp-main.html"
-                            class="btn rounded-4 btn-primary">
-                            Sign Up
-                        </a>
+<a href="login.html" class="btn btn-outline-primary text-black rounded-4" role="button">Login</a>
+  <a href="signup.html" class="btn btn-primary rounded-4" role="button">Sign Up</a>
 
                     </div>
 
