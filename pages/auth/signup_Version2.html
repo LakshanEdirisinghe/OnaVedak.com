@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OnaVedak - Sign Up</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+    <link href="/CSS/auth V2/assets_css_custom_Version2.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-3 ms-4" href="/index.html">Ona<span
+            style="color: #2f5bff;"
+            class="text-brand ">Vedak</span>.com</a>
+        <div>
+          <a class="btn btn-outline-primary me-2"
+            href="./login_Version1.html">Log in</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-7">
+          <div class="card shadow-sm">
+            <div class="card-body p-4">
+              <h4 class="mb-3">Create an account</h4>
+              <form id="signupForm" novalidate>
+                <div class="mb-3">
+                  <label for="fullName" class="form-label">Full name</label>
+                  <input type="text" id="fullName" class="form-control"
+                    required>
+                  <div class="invalid-feedback">Please enter your full
+                    name.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input type="email" id="email" class="form-control" required>
+                  <div class="invalid-feedback">Please enter a valid
+                    email.</div>
+                </div>
+
+                <div class="row g-2 mb-3">
+                  <div class="col">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" class="form-control"
+                      minlength="8" required>
+                    <div class="invalid-feedback">Password must be at least 8
+                      characters.</div>
+                  </div>
+                  <div class="col">
+                    <label for="confirmPassword" class="form-label">Confirm
+                      password</label>
+                    <input type="password" id="confirmPassword"
+                      class="form-control" minlength="8" required>
+                    <div class="invalid-feedback">Passwords must match.</div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="contact" class="form-label">Contact number</label>
+                  <input type="tel" id="contact" class="form-control" required
+                    placeholder="+94XXXXXXXXX">
+                  <div class="invalid-feedback">Please provide a contact number
+                    (used for password recovery).</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="location" class="form-label">Location</label>
+                  <input type="text" id="location" class="form-control"
+                    placeholder="City / Area">
+                </div>
+
+                <div class="mb-3">
+                  <label for="skills" class="form-label">Skills / Short profile
+                    (optional)</label>
+                  <input type="text" id="skills" class="form-control"
+                    placeholder="e.g., Plumbing, Electrical, Gardening">
+                  <div class="form-text">You can add skills later in your
+                    profile.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="idPhoto" class="form-label">Upload ID / Passport
+                    photo (required)</label>
+                  <input class="form-control" type="file" id="idPhoto"
+                    accept="image/*" required>
+                  <div class="invalid-feedback">Please upload an ID or passport
+                    photo (image).</div>
+                </div>
+
+                <div id="signupAlert" class="alert d-none" role="alert"></div>
+
+                <div class="d-grid">
+                  <button class="btn btn-primary" type="submit">Sign up</button>
+                </div>
+
+                <p class="mt-3 small text-muted">By creating an account you
+                  accept our demo terms. This demo stores data locally in your
+                  browser only.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/js/auth/auth.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('signupForm');
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        // reset alert
+        const alertEl = document.getElementById('signupAlert');
+        alertEl.classList.add('d-none');
+
+        // basic validation
+        let valid = true;
+        const fullName = document.getElementById('fullName');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirmPassword');
+        const contact = document.getElementById('contact');
+        const location = document.getElementById('location');
+        const skills = document.getElementById('skills');
+        const idPhoto = document.getElementById('idPhoto');
+
+        [fullName, email, password, confirmPassword, contact, idPhoto].forEach(inp => {
+          inp.classList.remove('is-invalid');
+        });
+
+        if (!fullName.value.trim()) { valid = false; fullName.classList.add('is-invalid'); }
+        if (!validateEmail(email.value)) { valid = false; email.classList.add('is-invalid'); }
+        if (password.value.length < 8) { valid = false; password.classList.add('is-invalid'); }
+        if (password.value !== confirmPassword.value) { valid = false; confirmPassword.classList.add('is-invalid'); }
+        if (!contact.value.trim()) { valid = false; contact.classList.add('is-invalid'); }
+        if (!idPhoto.files || idPhoto.files.length === 0) { valid = false; idPhoto.classList.add('is-invalid'); }
+
+        if (!valid) return;
+
+        // check unique email
+        if (findUserByEmail(email.value)) {
+          alertEl.textContent = 'An account with this email already exists. Please log in or use another email.';
+          alertEl.className = 'alert alert-danger';
+          alertEl.classList.remove('d-none');
+          return;
+        }
+
+        // read ID photo as base64
+        try {
+          const photoDataUrl = await readFileAsDataURL(idPhoto.files[0]);
+
+          const newUser = {
+            id: 'u_' + Date.now(),
+            name: fullName.value.trim(),
+            email: email.value.trim().toLowerCase(),
+            password: password.value, // DEMO: plaintext. NOT for production.
+            contact: contact.value.trim(),
+            location: location.value.trim(),
+            skills: skills.value.trim(),
+            idPhoto: photoDataUrl,
+            createdAt: new Date().toISOString()
+          };
+
+          saveUser(newUser);
+
+          alertEl.textContent = 'Account created successfully. Redirecting to login...';
+          alertEl.className = 'alert alert-success';
+          alertEl.classList.remove('d-none');
+
+          setTimeout(() => { window.location.href = 'login.html'; }, 1200);
+
+        } catch (err) {
+          alertEl.textContent = 'Failed to read ID photo. Please try another image.';
+          alertEl.className = 'alert alert-danger';
+          alertEl.classList.remove('d-none');
+        }
+      });
+
+      // helper: email validation
+      function validateEmail(e) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(e).toLowerCase());
+      }
+    });
+  </script>
+  </body>
+</html>

@@ -1,3 +1,35 @@
+    :root {
+      --navy-950: #0c1526;
+      --navy-900: #111f38;
+      --navy-800: #16294a;
+      --blue-600: #2f5bff;
+      --blue-500: #3f6bff;
+      --cream: #faf5e4;
+      --mint: #eef8f2;
+    }
+
+
+    .bg-navy {
+      background-color: var(--navy-950) !important;
+    }
+
+    .bg-navy-800 {
+      background-color: var(--navy-800) !important;
+    }
+
+    .bg-cream {
+      background-color: var(--cream) !important;
+    }
+
+    .bg-mint {
+      background-color: var(--mint) !important;
+    }
+
+    .bg-services-gradient {
+      background: linear-gradient(180deg, #1d3fae, #1746c9);
+    }
+
+
 * {
     font-family: "Google Sans", sans-serif;
 }

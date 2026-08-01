@@ -1,0 +1,8 @@
+/* Small visual tweaks for the demo */
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+.card { border-radius: 0.5rem; }
+img.img-thumbnail { max-height: 220px; object-fit: contain; }
+
+/* *{
+    background-color: aquamarine;
+} */
