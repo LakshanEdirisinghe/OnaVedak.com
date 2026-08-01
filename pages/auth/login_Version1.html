@@ -58,7 +58,7 @@
     </div>
   </main>
 
-  <script src="/js/auth/assets_js_auth_Version2.js"></script>
+  <script src="/js/auth/auth.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('loginForm');
@@ -87,7 +87,7 @@
         alertEl.className = 'alert alert-success';
         alertEl.classList.remove('d-none');
 
-        setTimeout(() => { window.location.href = 'dashboard.html'; }, 700);
+        setTimeout(() => { window.location.href = '../dashboard_Version2.html'; }, 700);
       });
     });
   </script>
