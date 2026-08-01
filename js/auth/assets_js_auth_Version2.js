@@ -2,6 +2,7 @@
 // NOTE: This is a front-end only demo. Passwords are stored as plaintext in localStorage.
 // DO NOT use this approach in production. Implement server-side authentication & proper password hashing.
 
+
 (function () {
   // Expose functions globally for the simple demo pages
   window.readFileAsDataURL = function (file) {
