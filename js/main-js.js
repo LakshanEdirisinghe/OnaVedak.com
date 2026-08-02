@@ -1,6 +1,5 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Hero text content for different modes
     const heroContent = {
       hire: {
         title: 'Grow at the speed of your ambition',
@@ -12,7 +11,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
       }
     };
 
-    // Mode toggle functionality
     const modeHireBtn = document.getElementById('modeHire');
     const modeTaskerBtn = document.getElementById('modeTasker');
     const heroTitle = document.getElementById('heroTitle');

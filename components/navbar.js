@@ -1,5 +1,3 @@
-// data set
-
 const data = {
   homecleaning: `
         <div class=" text-center mb-2"><strong>Home Cleaning</strong></div>
@@ -592,17 +590,14 @@ export function initializeMegaMenu() {
   let megaDropdown = document.querySelector(".mega-dropdown-menu");
   let dropdownToggle = document.querySelector(".d-down-navbar");
 
-  // Toggle dark background when dropdown is shown/hidden
   if (dropdownToggle) {
     dropdownToggle.addEventListener("click", () => {
       setTimeout(() => {
         if (megaDropdown && megaDropdown.offsetParent !== null) {
-          // Dropdown is visible
           if (darkOverlay) {
             darkOverlay.classList.add("show");
           }
         } else {
-          // Dropdown is hidden
           if (darkOverlay) {
             darkOverlay.classList.remove("show");
           }
@@ -611,12 +606,11 @@ export function initializeMegaMenu() {
     });
   }
 
-  // Close dark overlay when clicking on it
   if (darkOverlay) {
     darkOverlay.addEventListener("click", () => {
       darkOverlay.classList.remove("show");
       if (dropdownToggle) {
-        dropdownToggle.click(); // Close the dropdown
+        dropdownToggle.click();
       }
     });
   }
@@ -634,18 +628,15 @@ export function initializeMegaMenu() {
 
 export function navBarNormal() {
   return `
-<!-- Dark Overlay for Mega Menu -->
 <div id="darkOverlay" class="dark-overlay"></div>
 
 <nav class="navbar navbar-expand-lg  navBg-color bg-bg-light">
             <div class="container-fluid">
 
-                <!-- Brand -->
                 <a class="navbar-brand fw-bold fs-3 ms-4" href="/index.html">Ona<span
                         style="color: #2f5bff;"
                         class="text-brand ">Vedak</span>.com</a>
 
-                <!-- Toggle Button -->
                 <button class="navbar-toggler border-0 shadow-none"
                     type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav" aria-controls="navbarNav"
@@ -662,10 +653,8 @@ export function navBarNormal() {
 
                 </button>
 
-                <!-- Collapsible Content -->
                 <div class="collapse navbar-collapse" id="navbarNav">
 
-                    <!-- Center Menu -->
                     <ul class="navbar-nav mx-auto">
 
                         <li class="nav-item dropdown ">
@@ -788,7 +777,6 @@ export function navBarNormal() {
 
                     </ul>
 
-                    <!-- Right Buttons -->
                     <div class="d-flex  gap-2 me-lg-4 me-md-3">
 
                         <a href="pages/auth/login_Version1.html"

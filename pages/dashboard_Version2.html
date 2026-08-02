@@ -1,77 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OnaVedak - Dashboard</title>
+
+   
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet">
-    <link href="/CSS/auth V2/assets_css_custom_Version2.css" rel="stylesheet">
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="/css/dashboard.css" />
   </head>
-  <body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
-      <div class="container">
-        <a class="navbar-brand fw-bold fs-3 ms-4" href="./dashboard_Version2.html">Ona<span
-            style="color: #2f5bff;"
-            class="text-brand ">Vedak</span>.com</a>
-        <div>
-          <button id="logoutBtn" class="btn btn-outline-danger">Logout</button>
-        </div>
-      </div>
-    </nav>
 
-    <main class="container">
-      <div id="profileCard" class="card shadow-sm mx-auto"
-        style="max-width:720px;">
-        <div class="card-body">
-          <h5 id="welcomeName" class="card-title"></h5>
-          <p id="joinedAt" class="text-muted small"></p>
+  <body class="dashboard-view">
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+      <!-- Sidebar content will be rendered by JS -->
+    </aside>
 
-          <div class="row g-3">
-            <div class="col-md-4 text-center">
-              <img id="profilePhoto" src alt="ID photo"
-                class="img-fluid img-thumbnail">
-            </div>
-            <div class="col-md-8">
-              <p><strong>Email:</strong> <span id="profileEmail"></span></p>
-              <p><strong>Contact:</strong> <span id="profileContact"></span></p>
-              <p><strong>Location:</strong> <span
-                  id="profileLocation"></span></p>
-              <p><strong>Skills / Summary:</strong> <span
-                  id="profileSkills"></span></p>
-            </div>
-          </div>
+    <!-- Main Content Area -->
+    <div class="dashboard-main">
+      <!-- Top Bar -->
+      <header class="dashboard-topbar">
+        <!-- Topbar content will be rendered by JS -->
+      </header>
 
-        </div>
-      </div>
-    </main>
+      <!-- Dashboard Content -->
+      <main class="dashboard-content">
+        <!-- Onboarding Section -->
+        <section data-section="onboarding">
+          <!-- Onboarding steps will be rendered by JS -->
+        </section>
 
+        <!-- Overview Section -->
+        <section data-section="overview">
+          <!-- Overview cards will be rendered by JS -->
+        </section>
+
+        <!-- Jobs/Tasks Section -->
+        <section data-section="jobs">
+          <!-- Jobs section will be rendered by JS -->
+        </section>
+      </main>
+    </div>
+
+    <!-- Scripts -->
     <script src="/js/auth/auth.js"></script>
+    <script src="/js/dashboard.js"></script>
+
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const currentUser = getCurrentUser();
-      if (!currentUser) {
-        // not logged in
-        window.location.href = 'login.html';
-        return;
-      }
-
-      document.getElementById('welcomeName').textContent = 'Welcome, ' + currentUser.name;
-      document.getElementById('joinedAt').textContent = 'Member since ' + new Date(currentUser.createdAt).toLocaleString();
-      document.getElementById('profileEmail').textContent = currentUser.email;
-      document.getElementById('profileContact').textContent = currentUser.contact;
-      document.getElementById('profileLocation').textContent = currentUser.location || '-';
-      document.getElementById('profileSkills').textContent = currentUser.skills || '-';
-      document.getElementById('profilePhoto').src = currentUser.idPhoto || '';
-
-      document.getElementById('logoutBtn').addEventListener('click', function () {
-        clearCurrentUser();
-        window.location.href = '/index.html';
+      // Setup Bootstrap for tooltips (if needed later)
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
       });
-    });
-
-    console.log('Dashboard script loaded');
-  </script>
+    </script>
   </body>
 </html>

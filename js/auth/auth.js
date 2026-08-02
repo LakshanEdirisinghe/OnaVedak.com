@@ -1,5 +1,4 @@
 (function () {
-  // Expose functions globally for the simple demo pages
   window.readFileAsDataURL = function (file) {
     return new Promise(function (resolve, reject) {
       const reader = new FileReader();
@@ -10,9 +9,8 @@
   };
 
   const USERS_KEY = 'ov_users';
-  const CURRENT_USER_KEY = 'ov_currentUser'; // stores id of current user (either in sessionStorage or localStorage)
+  const CURRENT_USER_KEY = 'ov_currentUser';
 
-  // Get users array from localStorage
   window.getUsers = function () {
     try {
       const raw = localStorage.getItem(USERS_KEY);
@@ -53,7 +51,7 @@
     return true;
   };
 
-  // set current user id; if remember true store in localStorage, else in sessionStorage
+
   window.setCurrentUser = function (userId, remember) {
     if (remember) {
       localStorage.setItem(CURRENT_USER_KEY, userId);
@@ -81,14 +79,10 @@
 
 })();
 
-// === Development helper: seed a demo user automatically ===
-// This block will create a demo/test account in localStorage if it doesn't already exist.
-
 (function seedDemoUserIfDev() {
   try {
     const hostname = (location && location.hostname) || '';
     if (!(hostname === 'localhost' || hostname === '127.0.0.1' || location.protocol === 'file:')) {
-      // Don't auto-seed on production hosts
       return;
     }
 
@@ -103,7 +97,6 @@
         contact: '0714026489',
         location: 'Colombo',
         skills: 'Plumbing',
-        // tiny placeholder image so an image appears in dashboard
         idPhoto: 'https://bootdey.com/img/Content/avatar/avatar7.png',
         createdAt: new Date().toISOString()
       };
@@ -126,7 +119,6 @@
   }
 })();
 
-// Call from pages to securely update password (demo-local only)
 window.resetPasswordByEmailAndContact = function (email, contact, newPassword) {
   if (!email || !contact || !newPassword) {
     return { success: false, message: 'Email, contact and new password are required.' };
@@ -143,7 +135,7 @@ window.resetPasswordByEmailAndContact = function (email, contact, newPassword) {
     return { success: false, message: 'Contact number does not match our records.' };
   }
 
-  user.password = newPassword; // DEMO: plaintext
+    user.password = newPassword;
   const ok = updateUser(user);
   if (!ok) {
     return { success: false, message: 'Failed to update password. Please try again.' };

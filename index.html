@@ -344,6 +344,53 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/main-js.js"></script>
+
+    <script>
+      // Hero text content for different modes
+      const heroContent = {
+        hire: {
+          title: 'Grow at the speed of your ambition',
+          description: 'Book trusted, vetted help for cleaning, repairs, moving and more — scheduled in minutes, done on your terms.'
+        },
+        tasker: {
+          title: 'Earn on Your Own Terms',
+          description: 'Offer your expertise and services to thousands of customers. Build your reputation, set your rates, and earn more on your schedule.'
+        }
+      };
+
+      // Mode toggle functionality
+      const modeHireBtn = document.getElementById('modeHire');
+      const modeTaskerBtn = document.getElementById('modeTasker');
+      const heroTitle = document.getElementById('heroTitle');
+      const heroDescription = document.getElementById('heroDescription');
+
+      function updateHeroContent(mode) {
+        const content = heroContent[mode];
+        heroTitle.textContent = content.title;
+        heroDescription.textContent = content.description;
+        // Save to localStorage so it persists to dashboard
+        localStorage.setItem('userMode', mode);
+      }
+
+      modeHireBtn.addEventListener('change', () => {
+        if (modeHireBtn.checked) {
+          updateHeroContent('hire');
+        }
+      });
+
+      modeTaskerBtn.addEventListener('change', () => {
+        if (modeTaskerBtn.checked) {
+          updateHeroContent('tasker');
+        }
+      });
+
+      // Restore mode from localStorage if exists
+      const savedMode = localStorage.getItem('userMode');
+      if (savedMode === 'tasker') {
+        modeTaskerBtn.checked = true;
+        updateHeroContent('tasker');
+      }
+    </script>
   </body>
 
 </html>
