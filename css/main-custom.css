@@ -125,6 +125,11 @@ h4,
     object-fit: cover;
 }
 
+.mode-toggle :hover{
+    background-color:#9aa2b15d !important;
+     color:#000000 !important;
+}
+
 @media (min-width:992px) {
     .hero-collage img {
         min-height: 380px;
