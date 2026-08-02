@@ -616,11 +616,16 @@ export function initializeMegaMenu() {
   }
 
   document.querySelectorAll(".category").forEach((item) => {
-    item.addEventListener("mouseenter", () => {
+    const updateContent = (event) => {
+      if (event) event.preventDefault();
       const service = item.dataset.service;
-
+      if (!service) return;
       contentArea.innerHTML = data[service];
-    });
+    };
+
+    item.addEventListener("mouseenter", updateContent);
+    item.addEventListener("click", updateContent);
+    item.addEventListener("touchstart", updateContent);
   });
 
   contentArea.innerHTML = data.homecleaning;
@@ -682,10 +687,10 @@ export function navBarNormal() {
                                     <div class="row ">
 
                                         <div
-                                            class="col-lg-4 pe-2 p-0 mt-2 mb-2 overflow-y-auto  "
+                            <div class="col-lg-4 pe-2 p-0 mt-2 mb-2 overflow-y-auto mobile-menu-left"
                                             style="max-height: 400px;">
 
-                                            <div class="list-group ">
+                                            <div class="list-group">
 
                                                 <div
                                                     class=" text-center mb-2"><strong>CATEGORIES</strong></div>
