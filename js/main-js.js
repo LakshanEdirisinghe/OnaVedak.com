@@ -1,3 +1,5 @@
+import { SERVICES } from './services-data.js';
+
 document.getElementById('year').textContent = new Date().getFullYear();
 
     const heroContent = {
@@ -34,77 +36,79 @@ document.getElementById('year').textContent = new Date().getFullYear();
       }
     });
 
-    /* ---- Services data (same content as original) ---- */
-    const SERVICES = [
-      {
-        key: 'cleaning', label: 'Cleaning', icon: 'bi-stars',
-        subs: {
-          'Vacation and rental': ['Turnover cleaning', 'Airbnb prep', 'Deep clean before check-in'],
-          'Residential cleaning': ['Standard home clean', 'Move-out clean', 'Recurring weekly clean'],
-          'Specialty cleaning': ['Post-construction clean', 'Carpet & upholstery', 'Window cleaning']
-        }
-      },
-      {
-        key: 'handyman', label: 'Handyman', icon: 'bi-tools',
-        subs: {
-          'General repairs': ['Drywall patching', 'Door adjustment', 'Fixture repair'],
-          'Wall mounting': ['TV mounting', 'Shelf mounting', 'Mirror hanging'],
-          'Small installs': ['Curtain rods', 'Light fixtures', 'Smart locks']
-        }
-      },
-      {
-        key: 'moving', label: 'Moving services', icon: 'bi-truck',
-        subs: {
-          'Local moving': ['Studio move', '1-2 bedroom move', 'Furniture-only move'],
-          'Loading & unloading': ['Truck loading', 'Storage unit loading', 'Unloading only'],
-          'Packing help': ['Full-home packing', 'Fragile item packing', 'Unpacking service']
-        }
-      },
-      {
-        key: 'yardwork', label: 'Yardwork and outdoor', icon: 'bi-tree',
-        subs: {
-          'Lawn care': ['Mowing', 'Edging', 'Fertilizing'],
-          'Garden help': ['Planting', 'Weeding', 'Mulching'],
-          'Seasonal cleanup': ['Leaf removal', 'Gutter cleaning', 'Snow removal']
-        }
-      },
-      {
-        key: 'furniture', label: 'Furniture assembly', icon: 'bi-house-gear',
-        subs: {
-          'Flat-pack assembly': ['IKEA assembly', 'Wayfair assembly', 'Target assembly'],
-          'Bed frames': ['Platform beds', 'Bunk beds', 'Storage beds'],
-          'Office furniture': ['Desks', 'Chairs', 'Shelving units']
-        }
-      },
-      {
-        key: 'shopping', label: 'Shopping and delivery', icon: 'bi-cart3',
-        subs: {
-          'Grocery run': ['Weekly groceries', 'Specialty store run', 'Bulk shopping'],
-          'Store pickup': ['Retail pickup', 'Return drop-off', 'Curbside pickup'],
-          'Same-day delivery': ['Local delivery', 'Gift delivery', 'Document delivery']
-        }
-      }
-    ];
+    /* SERVICES imported from js/services-data.js */
 
     const grid = document.getElementById('serviceGrid');
     const accordion = document.getElementById('subcatAccordion');
 
+    let sortableInstance = null;
+
+    function getSavedOrder() {
+      try {
+        const raw = localStorage.getItem('servicesOrder');
+        return raw ? JSON.parse(raw) : null;
+      } catch (e) { return null; }
+    }
+
+    function saveOrder(keys) {
+      try { localStorage.setItem('servicesOrder', JSON.stringify(keys)); } catch (e) {}
+    }
+
+    function applyOrder(list) {
+      const saved = getSavedOrder();
+      if (!saved || !Array.isArray(saved)) return list;
+      const map = new Map(list.map(s => [s.key, s]));
+      const ordered = [];
+      saved.forEach(k => { if (map.has(k)) ordered.push(map.get(k)); });
+      // include any new items not present in saved order
+      list.forEach(s => { if (!saved.includes(s.key)) ordered.push(s); });
+      return ordered;
+    }
+
     function renderServices(activeKey) {
-      grid.innerHTML = SERVICES.map(s => `
-      <div class="col">
-        <button class="service-card btn w-100 h-100 py-4 rounded-3 d-flex flex-column align-items-center gap-2 ${s.key === activeKey ? 'active' : ''}" data-key="${s.key}">
-          <i class="bi ${s.icon}"></i>
-          <span class="fw-semibold small text-center">${s.label}</span>
-        </button>
-      </div>
-    `).join('') + `
-      <div class="col">
-        <button class="btn w-100 h-100 py-4 rounded-3 bg-white text-navy d-flex flex-column align-items-center justify-content-center gap-2" id="moreBtn" style="color:#0c1526;">
-          <i class="bi bi-arrow-right-circle fs-4"></i>
-          <span class="fw-semibold small">More</span>
-        </button>
-      </div>
-    `;
+      const ordered = applyOrder(SERVICES);
+      // Render as a horizontal scrollable row of cards (no "More" card)
+      grid.innerHTML = `
+        <div class="services-row d-flex gap-3 py-2" role="list">
+          ${ordered.map(s => `
+            <div class="service-item" role="listitem">
+              <button class="service-card btn py-3 px-4 rounded-3 d-flex flex-column align-items-center gap-2 ${s.key === activeKey ? 'active' : ''}" data-key="${s.key}">
+                <i class="bi ${s.icon} fs-4"></i>
+                <span class="fw-semibold small text-center">${s.label}</span>
+              </button>
+            </div>
+          `).join('')}
+        </div>
+      `;
+
+      const row = grid.querySelector('.services-row');
+      if (row) initSortable(row);
+    }
+
+    function initSortable(row) {
+      // destroy previous instance if present
+      if (sortableInstance && typeof sortableInstance.destroy === 'function') {
+        try { sortableInstance.destroy(); } catch (e) {}
+        sortableInstance = null;
+      }
+
+      // Sortable is loaded from CDN and exposes Sortable global
+      if (typeof Sortable === 'undefined') return;
+
+      sortableInstance = Sortable.create(row, {
+        draggable: '.service-item',
+        direction: 'horizontal',
+        animation: 150,
+        chosenClass: 'sortable-chosen',
+        ghostClass: 'sortable-ghost',
+        dragClass: 'sortable-drag',
+        fallbackOnBody: true,
+        onEnd: function () {
+          // collect new order of keys
+          const keys = Array.from(row.querySelectorAll('.service-item > .service-card')).map(b => b.dataset.key).filter(Boolean);
+          saveOrder(keys);
+        }
+      });
     }
 
     function renderSubcats(activeKey) {
@@ -130,7 +134,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
       }).join('');
     }
 
-    let activeService = 'cleaning';
+    let activeService = 'homecleaning';
     renderServices(activeService);
     renderSubcats(activeService);
 
@@ -141,3 +145,37 @@ document.getElementById('year').textContent = new Date().getFullYear();
       renderServices(activeService);
       renderSubcats(activeService);
     });
+
+    // drag-to-scroll helper
+    function enableDragScroll(container) {
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      container.style.cursor = 'grab';
+
+      container.addEventListener('pointerdown', (e) => {
+        isDown = true;
+        container.setPointerCapture(e.pointerId);
+        startX = e.clientX;
+        scrollLeft = container.scrollLeft;
+        container.style.cursor = 'grabbing';
+      });
+
+      container.addEventListener('pointermove', (e) => {
+        if (!isDown) return;
+        const dx = e.clientX - startX;
+        container.scrollLeft = scrollLeft - dx;
+      });
+
+      container.addEventListener('pointerup', (e) => {
+        isDown = false;
+        container.releasePointerCapture(e.pointerId);
+        container.style.cursor = 'grab';
+      });
+
+      container.addEventListener('pointerleave', () => {
+        isDown = false;
+        container.style.cursor = 'grab';
+      });
+    }

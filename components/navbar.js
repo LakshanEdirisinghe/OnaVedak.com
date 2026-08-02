@@ -698,12 +698,6 @@ export function navBarNormal() {
 
                                                 <a href="#"
                                                     class="list-group-item border-0 list-group-item-action category maga-d-down-items"
-                                                    data-service="homemaintenance">
-                                                    Home &amp; Maintenance
-                                                </a>
-
-                                                <a href="#"
-                                                    class="list-group-item border-0 list-group-item-action category maga-d-down-items"
                                                     data-service="homeremodeling">
                                                     Home Remodeling
                                                 </a>
