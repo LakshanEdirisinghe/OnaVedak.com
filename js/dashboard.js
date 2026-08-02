@@ -1,98 +1,118 @@
 const Dashboard = (() => {
-  const SIDEBAR_TOGGLE_KEY = 'dashboard_sidebar_toggle';
-  let currentMode = localStorage.getItem('userMode') || 'hire';
+  const SIDEBAR_TOGGLE_KEY = "dashboard_sidebar_toggle";
+  let currentMode = localStorage.getItem("userMode") || "hire";
   let currentUser = null;
 
   const menuConfig = {
     hire: [
-      { id: 'home', label: 'Home', icon: 'bi-house-door-fill', active: true },
-      { id: 'notifications', label: 'Notifications', icon: 'bi-bell-fill', badge: 3 },
-      { id: 'jobs', label: 'My Jobs', icon: 'bi-briefcase-fill' },
-      { id: 'contracts', label: 'Contracts', icon: 'bi-file-earmark-text' },
-      { id: 'payments', label: 'Payments', icon: 'bi-credit-card' },
-      { id: 'messages', label: 'Messages', icon: 'bi-chat-dots-fill', badge: 2 },
-      { id: 'help', label: 'Help', icon: 'bi-question-circle-fill' }
+      { id: "home", label: "Home", icon: "bi-house-door-fill", active: true },
+      {
+        id: "notifications",
+        label: "Notifications",
+        icon: "bi-bell-fill",
+        badge: 3,
+      },
+      { id: "jobs", label: "My Jobs", icon: "bi-briefcase-fill" },
+      { id: "contracts", label: "Contracts", icon: "bi-file-earmark-text" },
+      { id: "payments", label: "Payments", icon: "bi-credit-card" },
+      {
+        id: "messages",
+        label: "Messages",
+        icon: "bi-chat-dots-fill",
+        badge: 2,
+      },
+      { id: "help", label: "Help", icon: "bi-question-circle-fill" },
     ],
     tasker: [
-      { id: 'home', label: 'Home', icon: 'bi-house-door-fill', active: true },
-      { id: 'notifications', label: 'Notifications', icon: 'bi-bell-fill', badge: 5 },
-      { id: 'tasks', label: 'Available Tasks', icon: 'bi-list-task' },
-      { id: 'active', label: 'Active Tasks', icon: 'bi-play-circle-fill' },
-      { id: 'earnings', label: 'Earnings', icon: 'bi-graph-up' },
-      { id: 'messages', label: 'Messages', icon: 'bi-chat-dots-fill', badge: 1 },
-      { id: 'portfolio', label: 'Portfolio', icon: 'bi-images' },
-      { id: 'help', label: 'Help', icon: 'bi-question-circle-fill' }
-    ]
+      { id: "home", label: "Home", icon: "bi-house-door-fill", active: true },
+      {
+        id: "notifications",
+        label: "Notifications",
+        icon: "bi-bell-fill",
+        badge: 5,
+      },
+      { id: "tasks", label: "Available Tasks", icon: "bi-list-task" },
+      { id: "active", label: "Active Tasks", icon: "bi-play-circle-fill" },
+      { id: "earnings", label: "Earnings", icon: "bi-graph-up" },
+      {
+        id: "messages",
+        label: "Messages",
+        icon: "bi-chat-dots-fill",
+        badge: 1,
+      },
+      { id: "portfolio", label: "Portfolio", icon: "bi-images" },
+      { id: "help", label: "Help", icon: "bi-question-circle-fill" },
+    ],
   };
 
   const onboardingSteps = {
     hire: [
       {
-        id: 'phone',
-        title: 'Verify your phone number',
-        description: 'Confirm it\'s you to publish your first job post.',
-        icon: '📱',
+        id: "phone",
+        title: "Verify your phone number",
+        description: "Confirm it's you to publish your first job post.",
+        icon: "📱",
         required: true,
-        completed: false
+        completed: false,
       },
       {
-        id: 'billing',
-        title: 'Add a billing method',
-        description: 'This can increase your hiring speed by up to 3x.',
-        icon: '💳',
+        id: "billing",
+        title: "Add a billing method",
+        description: "This can increase your hiring speed by up to 3x.",
+        icon: "💳",
         required: true,
-        completed: false
+        completed: false,
       },
       {
-        id: 'email',
-        title: 'Email address verified',
-        description: 'Confirmed and ready to hire.',
-        icon: '✉️',
+        id: "email",
+        title: "Email address verified",
+        description: "Confirmed and ready to hire.",
+        icon: "✉️",
         required: true,
-        completed: true
-      }
+        completed: true,
+      },
     ],
     tasker: [
       {
-        id: 'phone',
-        title: 'Verify your phone number',
-        description: 'Required to start accepting tasks.',
-        icon: '📱',
+        id: "phone",
+        title: "Verify your phone number",
+        description: "Required to start accepting tasks.",
+        icon: "📱",
         required: true,
-        completed: false
+        completed: false,
       },
       {
-        id: 'profile',
-        title: 'Complete your profile',
-        description: 'Add a photo, skills, and experience summary.',
-        icon: '👤',
+        id: "profile",
+        title: "Complete your profile",
+        description: "Add a photo, skills, and experience summary.",
+        icon: "👤",
         required: true,
-        completed: false
+        completed: false,
       },
       {
-        id: 'payment',
-        title: 'Add payment method',
-        description: 'Where we\'ll send your earnings.',
-        icon: '💰',
+        id: "payment",
+        title: "Add payment method",
+        description: "Where we'll send your earnings.",
+        icon: "💰",
         required: true,
-        completed: false
+        completed: false,
       },
       {
-        id: 'identity',
-        title: 'Verify your identity',
-        description: 'Complete identity verification for security.',
-        icon: '🔐',
+        id: "identity",
+        title: "Verify your identity",
+        description: "Complete identity verification for security.",
+        icon: "🔐",
         required: true,
-        completed: false
-      }
-    ]
+        completed: false,
+      },
+    ],
   };
 
   const init = () => {
-    if (typeof getCurrentUser === 'function') {
+    if (typeof getCurrentUser === "function") {
       currentUser = getCurrentUser();
       if (!currentUser) {
-        window.location.href = '/pages/auth/login_Version1.html';
+        window.location.href = "/pages/auth/login_Version1.html";
         return;
       }
     }
@@ -105,20 +125,23 @@ const Dashboard = (() => {
   };
 
   const renderSidebar = () => {
-    const sidebar = document.querySelector('.dashboard-sidebar');
+    const sidebar = document.querySelector(".dashboard-sidebar");
     if (!sidebar) return;
 
     const menu = menuConfig[currentMode] || menuConfig.hire;
-    const modeLabel = currentMode.charAt(0).toUpperCase() + currentMode.slice(1);
-    const userInitials = currentUser ? currentUser.name.substring(0, 2).toUpperCase() : 'U';
+    const modeLabel =
+      currentMode.charAt(0).toUpperCase() + currentMode.slice(1);
+    const userInitials = currentUser
+      ? currentUser.name.substring(0, 2).toUpperCase()
+      : "U";
 
     let html = `
       <div class="sidebar-header">
         <div class="sidebar-user">
           <div class="sidebar-user-avatar">${userInitials}</div>
           <div class="sidebar-user-info">
-            <h5>${currentUser ? currentUser.name : 'User'}</h5>
-            <p>${currentUser ? currentUser.email : 'user@example.com'}</p>
+            <h5>${currentUser ? currentUser.name : "User"}</h5>
+            <p>${currentUser ? currentUser.email : "user@example.com"}</p>
           </div>
         </div>
         <div class="user-mode-badge ${currentMode}">${modeLabel}</div>
@@ -126,9 +149,11 @@ const Dashboard = (() => {
       <ul class="sidebar-nav">
     `;
 
-    menu.forEach(item => {
-      const badge = item.badge ? `<span class="badge bg-danger rounded-pill ms-auto">${item.badge}</span>` : '';
-      const activeClass = item.active ? 'active' : '';
+    menu.forEach((item) => {
+      const badge = item.badge
+        ? `<span class="badge bg-danger rounded-pill ms-auto">${item.badge}</span>`
+        : "";
+      const activeClass = item.active ? "active" : "";
       html += `
         <li class="sidebar-nav-item">
           <a href="#" class="sidebar-nav-link ${activeClass}" data-page="${item.id}">
@@ -147,33 +172,33 @@ const Dashboard = (() => {
           <i class="bi bi-box-arrow-right"></i> Logout
         </button>
       </div>
-      <div style="padding: 15px 20px; text-align: center; border-top: 1px solid #dee2e6;">
-        <a class="navbar-brand fw-bold fs-5" href="/index.html" style="text-decoration: none; color: #0c1526;">
-          Ona<span style="color: #2f5bff;">Vedak</span>.com
+      <div class="d-flex justify-content-center opacity-25 mt-4 mb-3">
+        <a class="navbar-brand fw-bold fs-5" style="text-decoration: none; color: #0c1526;">Ona<span style="color: #2f5bff;">Vedak</span>.com
         </a>
       </div>
     `;
 
     sidebar.innerHTML = html;
 
-    const logoutBtn = sidebar.querySelector('#logoutBtn');
-    if (logoutBtn && typeof clearCurrentUser === 'function') {
-      logoutBtn.addEventListener('click', () => {
+    const logoutBtn = sidebar.querySelector("#logoutBtn");
+    if (logoutBtn && typeof clearCurrentUser === "function") {
+      logoutBtn.addEventListener("click", () => {
         clearCurrentUser();
-        window.location.href = '/index.html';
+        window.location.href = "/index.html";
       });
     }
   };
 
   const renderTopbar = () => {
-    const topbar = document.querySelector('.dashboard-topbar');
+    const topbar = document.querySelector(".dashboard-topbar");
     if (!topbar) return;
 
-    const modeLabel = currentMode.charAt(0).toUpperCase() + currentMode.slice(1);
-    const oppositeMode = currentMode === 'hire' ? 'tasker' : 'hire';
-    const modeIcon = currentMode === 'hire' ? '💼' : '🚀';
-    const modeBgColor = currentMode === 'hire' ? '#e3f2fd' : '#f3e5f5';
-    const modeTextColor = currentMode === 'hire' ? '#2f5bff' : '#7c3aed';
+    const modeLabel =
+      currentMode.charAt(0).toUpperCase() + currentMode.slice(1);
+    const oppositeMode = currentMode === "hire" ? "tasker" : "hire";
+    const modeIcon = currentMode === "hire" ? "💼" : "🚀";
+    const modeBgColor = currentMode === "hire" ? "#e3f2fd" : "#f3e5f5";
+    const modeTextColor = currentMode === "hire" ? "#2f5bff" : "#7c3aed";
 
     topbar.innerHTML = `
       <div class="dashboard-topbar-title">
@@ -213,14 +238,14 @@ const Dashboard = (() => {
     if (!container) return;
 
     const steps = onboardingSteps[currentMode] || [];
-    const completedCount = steps.filter(s => s.completed).length;
+    const completedCount = steps.filter((s) => s.completed).length;
     const totalCount = steps.length;
     const progressPercent = Math.round((completedCount / totalCount) * 100);
 
     let html = `
       <div class="onboarding-section">
         <h3 class="onboarding-title">
-          Last steps before ${currentMode === 'hire' ? 'hiring' : 'earning'}
+          Last steps before ${currentMode === "hire" ? "hiring" : "earning"}
         </h3>
         <div style="margin-bottom: 20px;">
           <div class="progress" style="height: 8px;">
@@ -232,10 +257,18 @@ const Dashboard = (() => {
         <div class="onboarding-steps">
     `;
 
-    steps.forEach(step => {
-      const badgeClass = step.completed ? 'completed' : (step.required ? 'required' : '');
-      const badgeText = step.completed ? 'Completed' : (step.required ? 'Required' : 'Optional');
-      const actionText = step.completed ? 'Completed' : 'Complete';
+    steps.forEach((step) => {
+      const badgeClass = step.completed
+        ? "completed"
+        : step.required
+          ? "required"
+          : "";
+      const badgeText = step.completed
+        ? "Completed"
+        : step.required
+          ? "Required"
+          : "Optional";
+      const actionText = step.completed ? "Completed" : "Complete";
 
       html += `
         <div class="onboarding-step ${badgeClass}">
@@ -244,7 +277,7 @@ const Dashboard = (() => {
           <h4 class="onboarding-step-title">${step.title}</h4>
           <p class="onboarding-step-description">${step.description}</p>
           <button class="onboarding-step-action" data-step="${step.id}" 
-            ${step.completed ? 'disabled' : ''}>
+            ${step.completed ? "disabled" : ""}>
             ${actionText}
           </button>
         </div>
@@ -258,8 +291,8 @@ const Dashboard = (() => {
 
     container.innerHTML = html;
 
-    container.querySelectorAll('.onboarding-step-action').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+    container.querySelectorAll(".onboarding-step-action").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
         const stepId = e.target.dataset.step;
         if (!e.target.disabled) {
           completeOnboardingStep(stepId);
@@ -274,7 +307,7 @@ const Dashboard = (() => {
 
     let html;
 
-    if (currentMode === 'hire') {
+    if (currentMode === "hire") {
       html = `
         <div class="overview-section">
           <div class="overview-grid">
@@ -339,7 +372,7 @@ const Dashboard = (() => {
 
     let html;
 
-    if (currentMode === 'hire') {
+    if (currentMode === "hire") {
       html = `
         <div class="jobs-section">
           <div class="jobs-header">
@@ -401,10 +434,12 @@ const Dashboard = (() => {
 
     container.innerHTML = html;
 
-    container.querySelectorAll('.jobs-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        container.querySelectorAll('.jobs-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
+    container.querySelectorAll(".jobs-tab").forEach((tab) => {
+      tab.addEventListener("click", () => {
+        container
+          .querySelectorAll(".jobs-tab")
+          .forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
         // TODO: Filter jobs based on selected tab
       });
     });
@@ -412,34 +447,36 @@ const Dashboard = (() => {
 
   const completeOnboardingStep = (stepId) => {
     const steps = onboardingSteps[currentMode];
-    const step = steps.find(s => s.id === stepId);
+    const step = steps.find((s) => s.id === stepId);
     if (step) {
       step.completed = true;
-      localStorage.setItem(`onboarding_${currentMode}_${stepId}`, 'completed');
+      localStorage.setItem(`onboarding_${currentMode}_${stepId}`, "completed");
       renderOnboarding();
     }
   };
 
   const showModeSwitchModal = (newMode, onConfirm) => {
     const newModeLabel = newMode.charAt(0).toUpperCase() + newMode.slice(1);
-    const currentModeLabel = currentMode.charAt(0).toUpperCase() + currentMode.slice(1);
-    
-    const changesList = newMode === 'hire' 
-      ? [
-          'Menu will show: My Jobs, Contracts, Payments',
-          'Overview will display hiring statistics',
-          'Job posting and management tools',
-          'Separate onboarding verification steps'
-        ]
-      : [
-          'Menu will show: Available Tasks, Active Tasks, Earnings, Portfolio',
-          'Overview will display earnings and ratings',
-          'Task application and management tools',
-          'Separate onboarding verification steps'
-        ];
+    const currentModeLabel =
+      currentMode.charAt(0).toUpperCase() + currentMode.slice(1);
 
-    const modal = document.createElement('div');
-    modal.id = 'modeSwitchModal';
+    const changesList =
+      newMode === "hire"
+        ? [
+            "Menu will show: My Jobs, Contracts, Payments",
+            "Overview will display hiring statistics",
+            "Job posting and management tools",
+            "Separate onboarding verification steps",
+          ]
+        : [
+            "Menu will show: Available Tasks, Active Tasks, Earnings, Portfolio",
+            "Overview will display earnings and ratings",
+            "Task application and management tools",
+            "Separate onboarding verification steps",
+          ];
+
+    const modal = document.createElement("div");
+    modal.id = "modeSwitchModal";
     modal.style.cssText = `
       position: fixed;
       top: 0;
@@ -454,7 +491,7 @@ const Dashboard = (() => {
       animation: fadeIn 0.2s ease;
     `;
 
-    const content = document.createElement('div');
+    const content = document.createElement("div");
     content.style.cssText = `
       background: white;
       border-radius: 12px;
@@ -465,12 +502,15 @@ const Dashboard = (() => {
       animation: scaleIn 0.3s ease;
     `;
 
-    let changesList_html = changesList.map(item => 
-      `<li style="margin-bottom: 12px; display: flex; gap: 10px;">
+    let changesList_html = changesList
+      .map(
+        (item) =>
+          `<li style="margin-bottom: 12px; display: flex; gap: 10px;">
         <span style="color: #2f5bff; font-weight: 600;">✓</span>
         <span style="color: #6c757d;">${item}</span>
-      </li>`
-    ).join('');
+      </li>`,
+      )
+      .join("");
 
     content.innerHTML = `
       <h2 style="color: #0c1526; margin-bottom: 8px; font-size: 22px;">Switch to ${newModeLabel} Mode?</h2>
@@ -518,28 +558,28 @@ const Dashboard = (() => {
     modal.appendChild(content);
     document.body.appendChild(modal);
 
-    const confirmBtn = document.getElementById('confirmModeSwitchBtn');
-    const cancelBtn = document.getElementById('cancelModeSwitchBtn');
+    const confirmBtn = document.getElementById("confirmModeSwitchBtn");
+    const cancelBtn = document.getElementById("cancelModeSwitchBtn");
 
-    confirmBtn.addEventListener('click', () => {
-      modal.style.animation = 'fadeOut 0.2s ease';
+    confirmBtn.addEventListener("click", () => {
+      modal.style.animation = "fadeOut 0.2s ease";
       setTimeout(() => {
         modal.remove();
         onConfirm();
       }, 200);
     });
 
-    cancelBtn.addEventListener('click', () => {
-      modal.style.animation = 'fadeOut 0.2s ease';
+    cancelBtn.addEventListener("click", () => {
+      modal.style.animation = "fadeOut 0.2s ease";
       setTimeout(() => {
         modal.remove();
       }, 200);
     });
 
     // Close on outside click
-    modal.addEventListener('click', (e) => {
+    modal.addEventListener("click", (e) => {
       if (e.target === modal) {
-        modal.style.animation = 'fadeOut 0.2s ease';
+        modal.style.animation = "fadeOut 0.2s ease";
         setTimeout(() => {
           modal.remove();
         }, 200);
@@ -548,23 +588,23 @@ const Dashboard = (() => {
   };
 
   const fadeOutSection = (section) => {
-    section.style.opacity = '0.5';
-    section.style.transition = 'opacity 0.2s ease';
+    section.style.opacity = "0.5";
+    section.style.transition = "opacity 0.2s ease";
   };
 
   const fadeInSection = (section) => {
-    section.style.opacity = '1';
-    section.style.transition = 'opacity 0.3s ease';
+    section.style.opacity = "1";
+    section.style.transition = "opacity 0.3s ease";
   };
 
   const showModeNotification = (mode) => {
     const modeLabel = mode.charAt(0).toUpperCase() + mode.slice(1);
-    const icon = mode === 'hire' ? '💼' : '🚀';
-    
-    let toast = document.getElementById('modeNotification');
+    const icon = mode === "hire" ? "💼" : "🚀";
+
+    let toast = document.getElementById("modeNotification");
     if (!toast) {
-      toast = document.createElement('div');
-      toast.id = 'modeNotification';
+      toast = document.createElement("div");
+      toast.id = "modeNotification";
       toast.style.cssText = `
         position: fixed;
         bottom: 20px;
@@ -584,65 +624,67 @@ const Dashboard = (() => {
       `;
       document.body.appendChild(toast);
     }
-    
+
     toast.innerHTML = `<span style="font-size: 20px;">${icon}</span><span>Switched to ${modeLabel} mode</span>`;
-    toast.style.display = 'flex';
-    
+    toast.style.display = "flex";
+
     setTimeout(() => {
-      toast.style.animation = 'slideOutDown 0.3s ease';
+      toast.style.animation = "slideOutDown 0.3s ease";
       setTimeout(() => {
-        toast.style.display = 'none';
+        toast.style.display = "none";
       }, 300);
     }, 2500);
   };
 
   const setupEventListeners = () => {
-    const modeSwitchBtn = document.getElementById('modeSwitchBtn');
+    const modeSwitchBtn = document.getElementById("modeSwitchBtn");
     if (modeSwitchBtn) {
-      modeSwitchBtn.addEventListener('click', () => {
+      modeSwitchBtn.addEventListener("click", () => {
         const newMode = modeSwitchBtn.dataset.mode;
         showModeSwitchModal(newMode, () => switchMode(newMode));
       });
     }
 
-    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebarToggle = document.getElementById("sidebarToggle");
     if (sidebarToggle) {
-      sidebarToggle.addEventListener('click', () => {
-        const sidebar = document.querySelector('.dashboard-sidebar');
-        sidebar.classList.toggle('show');
+      sidebarToggle.addEventListener("click", () => {
+        const sidebar = document.querySelector(".dashboard-sidebar");
+        sidebar.classList.toggle("show");
       });
     }
 
-    document.querySelectorAll('.sidebar-nav-link').forEach(link => {
-      link.addEventListener('click', (e) => {
+    document.querySelectorAll(".sidebar-nav-link").forEach((link) => {
+      link.addEventListener("click", (e) => {
         e.preventDefault();
         const page = link.dataset.page;
-        document.querySelectorAll('.sidebar-nav-link').forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
+        document
+          .querySelectorAll(".sidebar-nav-link")
+          .forEach((l) => l.classList.remove("active"));
+        link.classList.add("active");
 
-        const sidebar = document.querySelector('.dashboard-sidebar');
+        const sidebar = document.querySelector(".dashboard-sidebar");
         if (window.innerWidth <= 768) {
-          sidebar.classList.remove('show');
+          sidebar.classList.remove("show");
         }
 
-        console.log('Navigating to:', page);
+        console.log("Navigating to:", page);
       });
     });
 
-    document.addEventListener('click', (e) => {
+    document.addEventListener("click", (e) => {
       if (window.innerWidth <= 768) {
-        const sidebar = document.querySelector('.dashboard-sidebar');
-        const sidebarToggle = document.getElementById('sidebarToggle');
+        const sidebar = document.querySelector(".dashboard-sidebar");
+        const sidebarToggle = document.getElementById("sidebarToggle");
         if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
-          sidebar.classList.remove('show');
+          sidebar.classList.remove("show");
         }
       }
     });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.altKey && e.key === 'm') {
+    document.addEventListener("keydown", (e) => {
+      if (e.altKey && e.key === "m") {
         e.preventDefault();
-        const modeSwitchBtn = document.getElementById('modeSwitchBtn');
+        const modeSwitchBtn = document.getElementById("modeSwitchBtn");
         if (modeSwitchBtn) {
           modeSwitchBtn.click();
         }
@@ -652,10 +694,12 @@ const Dashboard = (() => {
 
   const switchMode = (newMode) => {
     currentMode = newMode;
-    localStorage.setItem('userMode', currentMode);
+    localStorage.setItem("userMode", currentMode);
 
     // Fade out content sections
-    const onboardingSection = document.querySelector('[data-section="onboarding"]');
+    const onboardingSection = document.querySelector(
+      '[data-section="onboarding"]',
+    );
     const overviewSection = document.querySelector('[data-section="overview"]');
     const jobsSection = document.querySelector('[data-section="jobs"]');
 
@@ -684,11 +728,11 @@ const Dashboard = (() => {
   // Public API
   return {
     init: init,
-    switchMode: switchMode
+    switchMode: switchMode,
   };
 })();
 
 // Initialize dashboard when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   Dashboard.init();
 });
