@@ -335,15 +335,17 @@ h4,
     .service-result-tag:hover {
         background: rgba(255, 255, 255, 0.14);
     }
-
+/* 
         margin-bottom: -3rem;
-        top: -30px;
-    }
-}
+        top: -30px;}
+    } */
+
 
 .how-photo img {
     height: 320px;
     object-fit: cover;
+    position: relative;
+    
 }
 
 @media (min-width:992px) {
