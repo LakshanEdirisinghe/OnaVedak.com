@@ -122,23 +122,18 @@ document.getElementById('year').textContent = new Date().getFullYear();
       const service = SERVICES.find(s => s.key === activeKey);
       if (!service) { accordion.innerHTML = ''; return; }
       const names = Object.keys(service.subs);
-      accordion.innerHTML = names.map((name, i) => {
-        const id = 'sub' + i;
-        return `
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${id}">
-              ${name}
-            </button>
-          </h2>
-          <div id="${id}" class="accordion-collapse collapse" data-bs-parent="#subcatAccordion">
-            <div class="accordion-body d-flex flex-wrap gap-2 pt-0 pb-3">
-              ${service.subs[name].map(item => `<a href="#" class="text-decoration-none small px-3 py-2 rounded-pill" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);">${item}</a>`).join('')}
+      accordion.innerHTML = `
+        <div class="service-result-grid">
+          ${names.map(name => `
+            <div class="service-result-card">
+              <h3 class="service-result-title">${name}</h3>
+              <div class="service-result-tags">
+                ${service.subs[name].map(item => `<span class="service-result-tag">${item}</span>`).join('')}
+              </div>
             </div>
-          </div>
+          `).join('')}
         </div>
       `;
-      }).join('');
     }
 
     let activeService = 'homecleaning';
