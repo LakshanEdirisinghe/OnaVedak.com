@@ -1,0 +1,232 @@
+:root {
+      --navy-950: #0c1526;
+      --navy-900: #111f38;
+      --navy-800: #16294a;
+      --blue-600: #2f5bff;
+      --blue-500: #3f6bff;
+      --cream: #faf5e4;
+      --mint: #eef8f2;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .navbar-brand,
+    .font-display {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .bg-navy {
+      background-color: var(--navy-950) !important;
+    }
+
+    .bg-navy-800 {
+      background-color: var(--navy-800) !important;
+    }
+
+    .bg-cream {
+      background-color: var(--cream) !important;
+    }
+
+    .bg-mint {
+      background-color: var(--mint) !important;
+    }
+
+    .bg-services-gradient {
+      background: linear-gradient(180deg, #1d3fae, #1746c9);
+    }
+
+    .btn-brand {
+      background-color: var(--blue-600);
+      border-color: var(--blue-600);
+      color: #fff;
+    }
+
+    .btn-brand:hover {
+      background-color: var(--blue-500);
+      border-color: var(--blue-500);
+      color: #fff;
+    }
+
+    .text-brand {
+      color: var(--blue-600) !important;
+    }
+
+    /* nav bar */
+
+    .btn-log:hover {
+    color: white !important;
+}
+
+.d-down-navbar::after {
+    display: none;
+
+}
+
+.d-down-navbar {
+    border: 1px solid #ffffff !important;
+}
+
+.d-down-navbar:active {
+    background-color: var(--bs-primary);
+    border-radius: 8px;
+    color: white !important;
+
+}
+
+
+.d-down-navbar:hover {
+    border: 1px solid #2071F8 !important;
+    border-radius: 8px;
+
+}
+
+.mega-dropdown-menu {
+    width: 600px;
+    min-width: 600px;
+
+    left: 50% !important;
+
+    transform: translateX(-50%);
+}
+
+.maga-d-down-items:hover {
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+
+    /* Hire/Tasker pill toggle, built on btn-check so Bootstrap handles the state */
+    .mode-toggle .btn {
+      border-radius: 999px;
+      font-weight: 600;
+      color: #c7cede;
+      border: none;
+    }
+
+    .mode-toggle .btn-check:checked+.btn {
+      background: #fff;
+      color: var(--navy-950);
+    }
+
+    .hero-collage img {
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+    }
+
+    @media (min-width:992px) {
+      .hero-collage img {
+        min-height: 380px;
+      }
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .15);
+      color: #dbe4ff;
+      transition: transform .15s ease, background .2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, .14);
+    }
+
+    .service-card.active {
+      background: var(--navy-950);
+      border-color: var(--navy-950);
+      color: #fff;
+    }
+
+    .service-card i {
+      font-size: 1.6rem;
+    }
+
+    .accordion-button:not(.collapsed) {
+      color: #fff;
+      background: rgba(255, 255, 255, .08);
+      box-shadow: none;
+    }
+
+    .accordion-button {
+      color: #dbe4ff;
+      background: transparent;
+      font-weight: 600;
+    }
+
+    .accordion-button::after {
+      filter: invert(1);
+    }
+
+    .accordion-item {
+      background: transparent;
+      border-color: rgba(255, 255, 255, .15);
+    }
+
+    .accordion-body a {
+      color: #dbe4ff;
+    }
+
+    .how-card {
+      margin-bottom: -2.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (min-width:992px) {
+      .how-card {
+        margin-right: -4rem;
+        margin-bottom: 0;
+      }
+    }
+
+    .how-photo img {
+      height: 320px;
+      object-fit: cover;
+    }
+
+    @media (min-width:992px) {
+      .how-photo img {
+        height: 440px;
+      }
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+    }
+
+    .footer-link {
+      color: #9aa2b1;
+    }
+
+    .footer-link:hover {
+      color: #fff;
+    }
+
+    /* Dark Overlay for Mega Menu */
+    .dark-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    .dark-overlay.show {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
