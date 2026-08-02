@@ -22,6 +22,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
       const content = heroContent[mode];
       heroTitle.textContent = content.title;
       heroDescription.textContent = content.description;
+      localStorage.setItem('userMode', mode);
     }
 
     modeHireBtn.addEventListener('change', () => {
@@ -35,6 +36,12 @@ document.getElementById('year').textContent = new Date().getFullYear();
         updateHeroContent('tasker');
       }
     });
+
+    const savedMode = localStorage.getItem('userMode');
+    if (savedMode === 'tasker') {
+      modeTaskerBtn.checked = true;
+      updateHeroContent('tasker');
+    }
 
     /* SERVICES imported from js/services-data.js */
 
