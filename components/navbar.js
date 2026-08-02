@@ -1,3 +1,5 @@
+// data set
+
 const data = {
   homecleaning: `
         <div class=" text-center mb-2"><strong>Home Cleaning</strong></div>
@@ -790,7 +792,7 @@ export function navBarNormal() {
                     <div class="d-flex  gap-2 me-lg-4 me-md-3">
 
                         <a href="pages/auth/login_Version1.html"
-                            class="btn btn-outline-primary text-black rounded-4"
+                            class="btn btn-outline-primary text-black rounded-4 btn-log"
                             role="button">Login</a>
                         <a href="/pages/auth/signup_Version2.html" class="btn btn-primary rounded-4"
                             role="button">Sign Up</a>
