@@ -635,7 +635,7 @@ export function navBarNormal() {
   return `
 <div id="darkOverlay" class="dark-overlay"></div>
 
-<nav class="navbar navbar-expand-lg  navBg-color bg-bg-light">
+<nav class="navbar navbar-expand-lg bg-white">
             <div class="container-fluid">
 
                 <a class="navbar-brand fw-bold fs-3 ms-4" href="/index.html">Ona<span
@@ -686,8 +686,7 @@ export function navBarNormal() {
 
                                     <div class="row ">
 
-                                        <div
-                            <div class="col-lg-4 pe-2 p-0 mt-2 mb-2 overflow-y-auto mobile-menu-left"
+                                        <div class="col-lg-4 pe-2 p-0 mt-2 mb-2 overflow-y-auto mobile-menu-left"
                                             style="max-height: 400px;">
 
                                             <div class="list-group">

@@ -4,8 +4,8 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
     const heroContent = {
       hire: {
-        title: 'Grow at the speed of your ambition',
-        description: 'Book trusted, vetted help for cleaning, repairs, moving and more — scheduled in minutes, done on your terms.'
+        title: 'Book Home Service Providers at Your Fingertips',
+        description: 'rusted, vetted help for cleaning, repairs, moving and more — scheduled in minutes, done on your terms.'
       },
       tasker: {
         title: 'Earn on Your Own Terms',
@@ -17,6 +17,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
     const modeTaskerBtn = document.getElementById('modeTasker');
     const heroTitle = document.getElementById('heroTitle');
     const heroDescription = document.getElementById('heroDescription');
+    
 
     function updateHeroContent(mode) {
       const content = heroContent[mode];
