@@ -1,12 +1,4 @@
-// Shared auth utilities for OnaVedak demo
-// NOTE: This is a front-end only demo. Passwords are stored as plaintext in localStorage.
-// DO NOT use this approach in production. Implement server-side authentication & proper password hashing.
-
-// This file uses an IIFE (Immediately Invoked Function Expression) to keep helper variables
-// private while exposing only the functions we need on window (e.g., saveUser, findUserByEmail).
-// An IIFE runs immediately and prevents accidental global variable leakage.
 (function () {
-  // Expose functions globally for the simple demo pages
   window.readFileAsDataURL = function (file) {
     return new Promise(function (resolve, reject) {
       const reader = new FileReader();
@@ -17,9 +9,8 @@
   };
 
   const USERS_KEY = 'ov_users';
-  const CURRENT_USER_KEY = 'ov_currentUser'; // stores id of current user (either in sessionStorage or localStorage)
+  const CURRENT_USER_KEY = 'ov_currentUser';
 
-  // Get users array from localStorage
   window.getUsers = function () {
     try {
       const raw = localStorage.getItem(USERS_KEY);
@@ -60,7 +51,7 @@
     return true;
   };
 
-  // set current user id; if remember true store in localStorage, else in sessionStorage
+
   window.setCurrentUser = function (userId, remember) {
     if (remember) {
       localStorage.setItem(CURRENT_USER_KEY, userId);
@@ -88,31 +79,25 @@
 
 })();
 
-// === Development helper: seed a demo user automatically ===
-// This block will create a demo/test account in localStorage if it doesn't already exist.
-// By default it only runs on local development (localhost, 127.0.0.1) or when loaded from file://
-// Remove or adjust the hostname checks if you want it to run on other hosts.
 (function seedDemoUserIfDev() {
   try {
     const hostname = (location && location.hostname) || '';
     if (!(hostname === 'localhost' || hostname === '127.0.0.1' || location.protocol === 'file:')) {
-      // Don't auto-seed on production hosts
       return;
     }
 
-    const demoEmail = 'test.user@example.com';
+    const demoEmail = 'ayomall30@gmail.com';
 
     if (typeof findUserByEmail === 'function' && !findUserByEmail(demoEmail)) {
       const demoUser = {
         id: 'u_test_001',
         name: 'Test User',
         email: demoEmail,
-        password: 'TestPass123', // demo plaintext (matches existing auth logic)
-        contact: '+94771234567',
+        password: '4523@829', 
+        contact: '0714026489',
         location: 'Colombo',
         skills: 'Plumbing',
-        // tiny placeholder image so an image appears in dashboard
-        idPhoto: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==',
+        idPhoto: 'https://bootdey.com/img/Content/avatar/avatar7.png',
         createdAt: new Date().toISOString()
       };
 
@@ -134,7 +119,6 @@
   }
 })();
 
-// Call from pages to securely update password (demo-local only)
 window.resetPasswordByEmailAndContact = function (email, contact, newPassword) {
   if (!email || !contact || !newPassword) {
     return { success: false, message: 'Email, contact and new password are required.' };
@@ -151,7 +135,7 @@ window.resetPasswordByEmailAndContact = function (email, contact, newPassword) {
     return { success: false, message: 'Contact number does not match our records.' };
   }
 
-  user.password = newPassword; // DEMO: plaintext
+    user.password = newPassword;
   const ok = updateUser(user);
   if (!ok) {
     return { success: false, message: 'Failed to update password. Please try again.' };
