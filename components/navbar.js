@@ -586,46 +586,13 @@ const data = {
 
 export function initializeMegaMenu() {
   let contentArea = document.getElementById("contentArea");
-  let darkOverlay = document.getElementById("darkOverlay");
-  let megaDropdown = document.querySelector(".mega-dropdown-menu");
-  let dropdownToggle = document.querySelector(".d-down-navbar");
-
-  if (dropdownToggle) {
-    dropdownToggle.addEventListener("click", () => {
-      setTimeout(() => {
-        if (megaDropdown && megaDropdown.offsetParent !== null) {
-          if (darkOverlay) {
-            darkOverlay.classList.add("show");
-          }
-        } else {
-          if (darkOverlay) {
-            darkOverlay.classList.remove("show");
-          }
-        }
-      }, 50);
-    });
-  }
-
-  if (darkOverlay) {
-    darkOverlay.addEventListener("click", () => {
-      darkOverlay.classList.remove("show");
-      if (dropdownToggle) {
-        dropdownToggle.click();
-      }
-    });
-  }
 
   document.querySelectorAll(".category").forEach((item) => {
-    const updateContent = (event) => {
-      if (event) event.preventDefault();
+    item.addEventListener("mouseenter", () => {
       const service = item.dataset.service;
-      if (!service) return;
-      contentArea.innerHTML = data[service];
-    };
 
-    item.addEventListener("mouseenter", updateContent);
-    item.addEventListener("click", updateContent);
-    item.addEventListener("touchstart", updateContent);
+      contentArea.innerHTML = data[service];
+    });
   });
 
   contentArea.innerHTML = data.homecleaning;
@@ -633,15 +600,16 @@ export function initializeMegaMenu() {
 
 export function navBarNormal() {
   return `
-<div id="darkOverlay" class="dark-overlay"></div>
 
-<nav class="navbar navbar-expand-lg bg-white">
+<nav class="navbar navbar-expand-lg  navBg-color bg-bg-light">
             <div class="container-fluid">
 
+                <!-- Brand -->
                 <a class="navbar-brand fw-bold fs-3 ms-4" href="/index.html">Ona<span
                         style="color: #2f5bff;"
                         class="text-brand ">Vedak</span>.com</a>
 
+                <!-- Toggle Button -->
                 <button class="navbar-toggler border-0 shadow-none"
                     type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav" aria-controls="navbarNav"
@@ -650,7 +618,7 @@ export function navBarNormal() {
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="30"
                         height="30" fill="currentColor"
-                        class="bi bi-list me-4" viewBox="0 0 16 16">
+                        class="bi bi-list text-light" viewBox="0 0 16 16">
 
                         <path fill-rule="evenodd"
                             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
@@ -658,8 +626,10 @@ export function navBarNormal() {
 
                 </button>
 
+                <!-- Collapsible Content -->
                 <div class="collapse navbar-collapse" id="navbarNav">
 
+                    <!-- Center Menu -->
                     <ul class="navbar-nav mx-auto">
 
                         <li class="nav-item dropdown ">
@@ -686,10 +656,11 @@ export function navBarNormal() {
 
                                     <div class="row ">
 
-                                        <div class="col-lg-4 pe-2 p-0 mt-2 mb-2 overflow-y-auto mobile-menu-left"
+                                        <div
+                                            class="col-lg-4 pe-2 p-0 mt-2 mb-2 overflow-y-auto  "
                                             style="max-height: 400px;">
 
-                                            <div class="list-group">
+                                            <div class="list-group ">
 
                                                 <div
                                                     class=" text-center mb-2"><strong>CATEGORIES</strong></div>
@@ -698,6 +669,12 @@ export function navBarNormal() {
                                                     class="list-group-item border-0 list-group-item-action category maga-d-down-items"
                                                     data-service="homecleaning">
                                                     Home Cleaning
+                                                </a>
+
+                                                <a href="#"
+                                                    class="list-group-item border-0 list-group-item-action category maga-d-down-items"
+                                                    data-service="homemaintenance">
+                                                    Home &amp; Maintenance
                                                 </a>
 
                                                 <a href="#"
@@ -775,10 +752,11 @@ export function navBarNormal() {
 
                     </ul>
 
+                    <!-- Right Buttons -->
                     <div class="d-flex  gap-2 me-lg-4 me-md-3">
 
                         <a href="pages/auth/login_Version1.html"
-                            class="btn btn-outline-primary text-black rounded-4 btn-log"
+                            class="btn btn-outline-primary text-black rounded-4"
                             role="button">Login</a>
                         <a href="/pages/auth/signup_Version2.html" class="btn btn-primary rounded-4"
                             role="button">Sign Up</a>

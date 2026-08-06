@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="..\..\..\css\singUp-main-style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="left-col">
+			<img src="..\..\..\assets\webLogo.png" class="logo">
+			<div class="content">
+				<h1>Welcome to Onawadak.lk!</h1>
+				<p>Your trusted platform to connect people with skills and people with needs. Join our community today and make your tasks easier.</p>
+				<h2>Wich discribe you best</h2>
+				<div class="registerType">
+					<div class="types">
+						<a href="#" onclick="loadForm('client_register.html'); return false;">
+        					<img src="..\..\..\assets\/client.png">
+    					</a>
+    					
+					</div>
+
+					<div class="types"><a href="#" onclick="loadForm('worker_register.html'); return false;">
+        					<img src="..\..\..\assets\worker.png">
+    					</a>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="right-col">
+			<div class="slider" id="slider">
+				<img src="..\..\..\assets\s1.jpeg" id="Slide">
+			</div>
+			
+			<iframe id="formFrame"></iframe>
+			<!--<div class="slider-content">
+				<h1>Add plants to your living space</h1>
+				<p>Plants are an inexpensive means to access space and adding color and textture.</p>
+				<div class="controller">
+					<button class="sliderButton" id="backBtn">Previouse</button>
+					<div class="vertical-line"></div>
+					<button class="sliderButton" id="nextBtn">Next</button>
+				</div>
+			</div>-->
+		</div>
+	</div>
+<script src="..\..\..\js\script.js"></script>
+</body>
+</html>
